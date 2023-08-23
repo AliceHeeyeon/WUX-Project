@@ -6,7 +6,8 @@ const router = express.Router()
 const {
     getProjects,
     getProject,
-    createProject
+    createProject,
+    deleteProject
 } = require('../controllers/projectController')
 
 // GET all projects
@@ -17,5 +18,8 @@ router.get('/:id', getProject)
 
 // POST a single project
 router.post('/', createProject)
+
+// DELETE a single project
+router.delete('/:id', deleteProject)
 
 module.exports = router
