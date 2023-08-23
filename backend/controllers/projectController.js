@@ -10,6 +10,25 @@ const getProjects = async(req, res) => {
     res.status(200).json(projects)
 }
 
+// Get single project by id
+const getProject = async(req, res) => {
+    const {id} = req.params
+
+    // is the given id valid?
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: "No such Project: Id Invalid"})
+    }
+
+    // find the project using the valid id
+    const project = await Project.find({_id: id})
+
+    // does the given id have an attached project
+    if (!project) {
+        return res.status(404).json({error: "No such Project: Project does not exist"})
+    }
+    res.status(200).json(project)
+}
+
 const createProject = async (req, res) => {
     const {title, prototype_url, description, image} = req.body
 
@@ -24,6 +43,7 @@ const createProject = async (req, res) => {
 
 module.exports = {
     getProjects,
+    getProject,
     createProject
 }
 
