@@ -1,0 +1,30 @@
+// Reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Colors
+
+$white: #ffffff;
+$main-color: #251427;
+$accent-color: #47234b;
+$button-color: #723279;
+$hover-color: #8e66ad;
+$border-color: #f8e8ef;
+$fine-text-color: #ac71b2;
+
+// Typefaces
+
+$head-font: "Koulen", sans-serif;
+$sub-font: "Share", sans-serif;
+$body-font: "Share Tech", sans-serif;
+
+// Type sizes
+
+$head-size: 40px;
+$sub-size: 34px;
+$body-size: 20px;
+$button-size: 22px;
