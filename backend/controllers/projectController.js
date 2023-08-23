@@ -59,10 +59,31 @@ const deleteProject = async (req, res) => {
     res.status(200).json(project)
 }
 
+const updateProject = async (req, res) => {
+    const {id} = req.params
+    
+    // is the given id valid?
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: "No such Project: Id Invalid"})
+    }
+
+    // find the project using the valid id
+    const project = await Project.findOneAndUpdate({_id: id}, {
+        ...req.body
+    }, {new:true})
+
+    // does the given id have an attached project
+    if (!project) {
+        return res.status(404).json({error: "No such Project: Project does not exist"})
+    }
+    res.status(200).json(project)
+}
+
 module.exports = {
     getProjects,
     getProject,
     createProject,
-    deleteProject
+    deleteProject,
+    updateProject
 }
 
