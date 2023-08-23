@@ -28,7 +28,7 @@ userSchema.statics.signup = async function (email, password) {
   if (!validator.isEmail(email)) {
     throw Error("Please enter a valid email");
   }
-  // chcek if password is strong enough
+  // check if password is strong enough
   // By default: minLength: 8,minLowercase: 1,minUppercase: 1, minNumber: 1, minSymbols: 1
   if (!validator.isStrongPassword(password)) {
     throw Error("Please enter in a stronger password");
@@ -61,12 +61,14 @@ userScheme.statics.login = async function (email, password) {
   if (!email || !password) {
     throw Error("both fields must be filled in");
   }
+
   // try and find the user on the database via the email provided
   const user = await this.findOne({ email });
   // if no user found
   if (!user) {
     throw Error("Incorrect email");
   }
+
   // compare passwords
   const match = await bcrypt.compare(password, user.password);
   // throw error if the dont match
