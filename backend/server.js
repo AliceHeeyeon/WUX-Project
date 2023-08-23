@@ -31,9 +31,10 @@ app.use('/api/projects/', projectRoutes)
 //bring mongo username and password from env file
 const mongoUsername = process.env.MONGODB_USERNAME
 const mongoPassword =process.env.MONGODB_PASSWORD
+const mongoDatabase =process.env.MONGO_DATABASE
 
 //mongo url
-const mongoURL = `mongodb+srv://${mongoUsername}:${mongoPassword}@cluster0.dkesc7g.mongodb.net/?retryWrites=true&w=majority`
+const mongoURL = `mongodb+srv://${mongoUsername}:${mongoPassword}@cluster0.dkesc7g.mongodb.net/${mongoDatabase}?retryWrites=true&w=majority`
 
 app.get('/', (req, res) => {
     res.send('Hello, this is your Express server for Team project')
