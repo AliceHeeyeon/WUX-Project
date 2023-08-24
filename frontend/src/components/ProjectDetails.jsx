@@ -78,12 +78,12 @@ const ProjectDetails = ({project}) => {
       // BELOW IS THE ORIGINAL DETAILS:
       (
         <>
-          {/* {project.image && ( */}
-            {/* <img  */}
-              {/* src={`http://localhost:4000/public/uploads/${project.image}`}
+         {project.image && ( 
+            <img  
+              src={`http://localhost:4000/public/uploads/${project.image}`}
               alt={project.title}
             />
-          )} */}
+          )} 
             <h4>{project.title}</h4>
             <p><strong>Created by: </strong>{project.user_id}</p>
             <p>{formatDistanceToNow( new Date(project.createdAt), {includeSeconds: true}, {addSuffix: true} )} ago</p>
