@@ -25,7 +25,7 @@ const Home = () => {
             {projects && projects.map((project) => {
                 return (
                     <>
-                        <p key={project._id}>{project.title}</p>
+                        <p ProjectDetails key={project._id}>{project.title}</p>
                     </>
                 )
             })}
