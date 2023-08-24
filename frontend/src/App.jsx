@@ -20,6 +20,8 @@ function App() {
           <div className='pages'>
             <Routes>
               <Route path='/' element={<Home/>}/>
+              <Route path='/addproject' element={<AddProject/>}/>
+              <Route path='/signup' element={<Signup/>}/>
             </Routes>
         </div>
       </BrowserRouter>
