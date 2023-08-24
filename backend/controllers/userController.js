@@ -19,7 +19,6 @@ const loginUser = async (req, res) => {
 
     // return username and newly logged in token
     res.status(200).json({ username, token });
-    // res.status(200).json({ username });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -39,7 +38,6 @@ const signupUser = async (req, res) => {
 
     // return the username and newly created user
     res.status(200).json({ username, token });
-    // res.status(200).json({ username });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
