@@ -7,7 +7,8 @@ const {
     getProjects,
     getProject,
     createProject,
-    deleteProject
+    deleteProject,
+    updateProject
 } = require('../controllers/projectController')
 
 // GET all projects
@@ -21,5 +22,8 @@ router.post('/', createProject)
 
 // DELETE a single project
 router.delete('/:id', deleteProject)
+
+// PATCH a single project
+router.patch('/:id', updateProject)
 
 module.exports = router
