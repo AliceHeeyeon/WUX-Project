@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 //Attach Routes to our app
 app.use("/api/projects/", projectRoutes);
 app.use("/api/user/", userRoutes);
+app.use('public/uploads', express.static('public/uploads'))
 
 //bring mongo username and password from env file
 const mongoUsername = process.env.MONGODB_USERNAME;
