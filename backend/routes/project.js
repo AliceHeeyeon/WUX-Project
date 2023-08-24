@@ -1,4 +1,20 @@
 const express = require('express')
+const multer = require("multer");
+
+// configure multer storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/uploads'); // store uploads in this directory
+  },
+  // unique filename for each file
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    const ext = path.extname(file.originalname)
+    cb(null, uniqueSuffix + ext)
+  }
+})
+
+const upload = multer({storage})
 
 const router = express.Router()
 
@@ -18,7 +34,7 @@ router.get('/', getProjects)
 router.get('/:id', getProject)
 
 // POST a single project
-router.post('/', createProject)
+router.post('/', upload.single('image'), createProject)
 
 // DELETE a single project
 router.delete('/:id', deleteProject)
