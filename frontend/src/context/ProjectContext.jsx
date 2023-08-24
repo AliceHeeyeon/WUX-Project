@@ -42,11 +42,6 @@ export const projectsReducer = (state, action) => {
                   workouts: updatedProjects,
                 };
               }
-
-
-
-
-
         default:
             return state // return state unchanged
     }
