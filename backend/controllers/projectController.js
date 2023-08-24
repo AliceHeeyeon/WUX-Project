@@ -30,10 +30,18 @@ const getProject = async(req, res) => {
 }
 
 const createProject = async (req, res) => {
-    const {title, prototype_url, description, image} = req.body
+    const {title, prototype_url, description, user_id} = req.body
+
+    const imageFilename = req.file ? req.file.filename : null;
 
     try {
-        const project = await Project.create({title, prototype_url, description, image})
+        const project = await Project.create({
+            title, 
+            prototype_url, 
+            description, 
+            user_id,
+            image: imageFilename
+        })
         res.status(200).json(project)
     }
     catch (err) {
