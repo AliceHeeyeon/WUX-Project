@@ -2,12 +2,11 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
-const { findOne } = require("./projectModel");
 
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  email: {
+  username: {
     type: String,
     required: true,
     unique: true,
@@ -19,14 +18,10 @@ const userSchema = new Schema({
 });
 
 // static method for user sign up
-userSchema.statics.signup = async function (email, password) {
-  // check if we have a value for the email and password
-  if (!email || !password) {
+userSchema.statics.signup = async function (username, password) {
+  // check if we have a value for the username and password
+  if (!username || !password) {
     throw Error("All fields must be filled");
-  }
-  // check if email is valid
-  if (!validator.isEmail(email)) {
-    throw Error("Please enter a valid email");
   }
   // check if password is strong enough
   // By default: minLength: 8,minLowercase: 1,minUppercase: 1, minNumber: 1, minSymbols: 1
@@ -34,10 +29,10 @@ userSchema.statics.signup = async function (email, password) {
     throw Error("Please enter in a stronger password");
   }
 
-  const exists = await this.findOne({ email });
+  const exists = await this.findOne({ username });
 
   if (exists) {
-    throw Error("that email already in use");
+    throw Error("that username already in use");
   }
 
   // Normal password: mypassword
@@ -50,23 +45,23 @@ userSchema.statics.signup = async function (email, password) {
   //Hash both the password and the salt combined
   const hash = await bcrypt.hash(password, salt);
   // set the password to the hash value when creating the user
-  const user = await this.create({ email, password: hash });
+  const user = await this.create({ username, password: hash });
 
   return user;
 };
 
 // static method for user log in
-userScheme.statics.login = async function (email, password) {
-  // check is email and password values exist
-  if (!email || !password) {
+userSchema.statics.login = async function (username, password) {
+  // check is username and password values exist
+  if (!username || !password) {
     throw Error("both fields must be filled in");
   }
 
-  // try and find the user on the database via the email provided
-  const user = await this.findOne({ email });
+  // try and find the user on the database via the username provided
+  const user = await this.findOne({ username });
   // if no user found
   if (!user) {
-    throw Error("Incorrect email");
+    throw Error("Incorrect username");
   }
 
   // compare passwords
