@@ -2,7 +2,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
-const { findOne } = require("./projectModel");
 
 const Schema = mongoose.Schema;
 
@@ -52,7 +51,7 @@ userSchema.statics.signup = async function (username, password) {
 };
 
 // static method for user log in
-userScheme.statics.login = async function (username, password) {
+userSchema.statics.login = async function (username, password) {
   // check is username and password values exist
   if (!username || !password) {
     throw Error("both fields must be filled in");
