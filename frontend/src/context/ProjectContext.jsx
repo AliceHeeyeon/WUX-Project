@@ -39,7 +39,7 @@ export const projectsReducer = (state, action) => {
           
 								// last return returns the map of updatedProjects
                 return {
-                  workouts: updatedProjects,
+                  projects: updatedProjects,
                 };
               }
         default:

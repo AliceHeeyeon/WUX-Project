@@ -19,6 +19,7 @@ const Home = () => {
       if (response.status === 200) {
         //setProjects(response.data)
         dispatch({type: 'SET_PROJECTS', payload: response.data})
+        console.log(response.data);
       }
     }
     fetchProjects()
