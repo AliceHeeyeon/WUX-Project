@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const AddProject = () => {
   // Bring in dispatch
-  const {dispatch} = useProjectsContext()
+  // const {dispatch} = useProjectsContext()
 
   //form inputs state variables
   const [title, setTitle] = useState('')
@@ -18,19 +18,19 @@ const AddProject = () => {
   const handleSubmit = async(e) => {
     e.preventDefault()
 
-    const user = JSON.parse(localStorage.getItem('user'))
-
+    // const user = JSON.parse(localStorage.getItem('user'))
+    const user_id = 'test.com'
     const formData = new FormData()
     formData.append('title', title)
     formData.append('prototype_url', prototype_url)
     formData.append('description', description)
-    // formData.append('user_id', user_id)
+    formData.append('user_id', user_id)
     formData.append('image', image)
 
     try {
       const response = await axios.post('http://localhost:4000/api/projects', formData, 
       {
-          header: {
+          headers: {
             'Content-Type' : 'multipart/form-data'
           }
       })
@@ -40,10 +40,11 @@ const AddProject = () => {
       setImage(null)
       setError(null)
       console.log('New Project added', response.data)
-      dispatch({type:'CREATE_PROJECTS', payload: response.data})
+      // dispatch({type:'CREATE_PROJECTS', payload: response.data})
     } catch(error) {
-      console.log(error);
+      console.log(error.response);
       setError(error.message)
+      
     }
   } 
 
