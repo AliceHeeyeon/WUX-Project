@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import axios from 'axios'
 import { useProjectsContext } from '../hooks/useProjectsContext';
+import { Link } from 'react-router-dom';
 
 
 // Import components
@@ -9,6 +10,9 @@ import ProjectDetails from "../components/ProjectDetails";
 const Home = () => {
   //const [projects, setProjects] = useState(null)
   const {projects, dispatch} = useProjectsContext()
+ 
+
+
 
   useEffect(() => {
        
@@ -25,17 +29,23 @@ const Home = () => {
 
   }, [])
 
-
+  
   return (
     <div className="home">
+      
         <div className="projects">
-           
-            {projects && projects.map((project) => {
-                return (
+
+        <Link to="/addproject">
+        <button>Add new</button>
+        </Link>
+      
+        {projects && projects.map((project) => {
+              return (
                     
                   <ProjectDetails key={project._id} project={project}/>
                 )
-            })}
+            })
+          }
         </div>
     </div>
   )
