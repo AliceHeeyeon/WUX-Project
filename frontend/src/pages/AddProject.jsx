@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useState} from 'react'
 import { useProjectsContext } from '../hooks/useProjectsContext'
+import { Link } from 'react-router-dom';
 
 const AddProject = () => {
   // Bring in dispatch
@@ -81,7 +82,12 @@ const AddProject = () => {
       <button>Add Project</button>
       {error && <div className='error'>{error}</div>}
 
+      <Link to="/">
+      <button>Close</button>
+    </Link>
+
     </form>
+    
   )
 }
 

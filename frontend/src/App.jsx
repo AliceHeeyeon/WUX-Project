@@ -3,7 +3,7 @@ import './css/App.min.css'
 
 //import pages
 import Home from './pages/Home'
-// import Signup from './pages/Signup'
+//import Signup from './pages/Signup'
 import AddProject from './pages/AddProject'
 import ProjectDetails from './pages/ProjectDetails'
 //import components
@@ -21,7 +21,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/addproject' element={<AddProject/>}/>
-              {/* <Route path='/signup' element={<Signup/>}/> */}
+              {/*<Route path='/signup' element={<Signup/>}/> */}
             </Routes>
         </div>
       </BrowserRouter>
