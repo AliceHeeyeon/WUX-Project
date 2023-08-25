@@ -26,7 +26,7 @@ export const projectsReducer = (state, action) => {
 
             case 'UPDATE_PROJECT': {
                 const updatedProject = action.payload;
-                const updatedProjects = state.projects.map(project => {
+                const updatedProjects = state.projects.map((project) => {
                   if (project._id === updatedProject._id) {
 										// swap the project for the updated on if id's matach
                     return updatedProject;
