@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 //Attach Routes to our app
 app.use("/api/projects/", projectRoutes);
-app.use("/api/user/", userRoutes);
+app.use("/api/user", userRoutes);
 app.use('/public/uploads', express.static('public/uploads'))
 
 //bring mongo username and password from env file
@@ -41,10 +41,6 @@ app.get("/", (req, res) => {
   res.send("Hello, this is your Express server for Team project");
 });
 
-app.listen(port, () => {
-  console.log(`Express server is running on http://localhost:${port}`);
-});
-
 mongoose
   .connect(mongoURL, {
     useNewUrlParser: true,
@@ -52,7 +48,9 @@ mongoose
   })
   //when success for request
   .then(() => {
-    console.log("Connect to MongoDB Atlas");
+    app.listen(port, () => {
+      console.log(`DB connected & Express server is running on http://localhost:${port}`);
+    });
   })
   //when error occured
   .catch((err) => {

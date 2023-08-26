@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import './css/App.min.css'
+import './css/App.scss'
 
 //import pages
 import Home from './pages/Home'
@@ -12,11 +13,22 @@ import Login from './components/Login'
 
 
 function App() {
+  const [isLoginVisible, setIsLoginVisible] = useState(false)
+
+  const handleLoginClick = () => {
+    setIsLoginVisible(true);
+    console.log('login clicked');
+  }
+
+  const handleLoginModalClose = () => {
+    setIsLoginVisible(false)
+  }
 
   return (
     <div className='project-app'>
       <BrowserRouter>
-        <Header/>
+        {/* custom event handler onLoginClick handle login modal */}
+        <Header onLoginClick={handleLoginClick}/>
           <div className='pages'>
             <Routes>
               <Route path='/' element={<Home/>}/>
@@ -24,6 +36,7 @@ function App() {
               {/*<Route path='/signup' element={<Signup/>}/> */}
             </Routes>
         </div>
+        {isLoginVisible && <Login onClose={handleLoginModalClose}/>}
       </BrowserRouter>
     </div>
   )
