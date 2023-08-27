@@ -1,28 +1,106 @@
+@media screen and (min-width:360px) {.query-mobile{padding: 0;}}
+
 body {
-    background-color: aliceblue;
-    h1 {
-      background-color: antiquewhite;
-    }
+  background: url('/app-bg.webp');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  font-family: $body-font;
+}
+
+#header {
+  margin: 5px;
+  padding: 15px 20px;
+
+  background-color: $main-color;
+  color: $white;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-family: $head-font;
+    // font-size: $head-size;
   }
+
+  nav div button {
+    background-color: $main-color;
+    border: none;
+    
+    font-size: 16px;
+    color: $white;
+
+    margin-left: 10px;
+  }
+}
+
+img {
+  width: 50%;
+}
+
 
 //   login modal 
 .login-modal {
     position: fixed;
     top: 0;
     left: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    
     // change the background color as our desired style
-    background-color: rgba(0, 0, 0, 66%);
+    background-color: rgba(37, 20, 39, 0.2);
     backdrop-filter: blur(5px);
 
     .login {
-        margin: 0 auto;
-        width: 300px;
-        height: 150px;
-        // it didn't recognize variable.scss, couldn't use variable
-        // please change the color as variable name after trouble shooting
-        background-color: #47234b;
+        margin: 10vh auto;
+        width: 80%;
+
+        padding: 20px;
+
+        background-color: $light-color;
+        border-radius: 15px;
+        border: 2px solid $white;
+        box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
+        
+        color: $white;
+        font-size: $body-size;
+
+        h3, button {font-size: $sub-size;}
+        * {margin: 10px 0;}
+        div {margin: 0;}
+        input {
+          width: 100%;
+          margin: 0;
+          padding: 2px 5px;
+
+          font-size: $body-size;
+
+          border: 1px solid black;
+          border-radius: 10px;
+        }
+
+        .cancel-login {
+          font-size: $sub-size;
+          position: absolute;
+          top: 10px;
+          left: 5px;
+        }
     }
+}
+
+@media screen and (min-width:540px) {
+// Media Query for large phones
+
+#header {
+  h1 {
+      font-size: $head-size;
+  }
+  nav div button {
+      font-size: $body-size;
+  }
+}
 }
