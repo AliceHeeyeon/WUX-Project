@@ -12,8 +12,10 @@ const Header = ({ onLoginClick }) => {
   };
 
   return (
-    <div>
-      <h1>WUX PROJECT</h1>
+    <div id="header">
+      <Link to="/">
+        <h1>WUX PROJECT</h1>
+      </Link>
       <nav>
         {user && (
           <div>
