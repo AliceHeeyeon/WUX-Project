@@ -18,13 +18,14 @@ const AddProject = () => {
   const handleSubmit = async(e) => {
     e.preventDefault()
 
-    // const user = JSON.parse(localStorage.getItem('user'))
-    const user_id = 'test.com'
+    const user_id = JSON.parse(localStorage.getItem('user'))
+    const user = user_id.username
+    console.log(user);
     const formData = new FormData()
     formData.append('title', title)
     formData.append('prototype_url', prototype_url)
     formData.append('description', description)
-    formData.append('user_id', user_id)
+    formData.append('user_id', user_id.username)
     formData.append('image', image)
 
     try {
