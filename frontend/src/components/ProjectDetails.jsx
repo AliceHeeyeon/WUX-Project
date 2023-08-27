@@ -13,20 +13,38 @@ const ProjectDetails = ({project}) => {
   const [isEditing, setIsEditing] = useState(false)
   //state for our edit form:
   const [editTitle, setEditTitle] = useState(project.title)
-  
+  const [editImage, setEditImage] = useState(project.image)
+
+
+  // EDIT IMAGE
+  //const handleImageChange = (event) => {
+    //const file = event.target.files[0];
+    //if (file) {
+      //const reader = new FileReader();
+     // reader.onload = () => {
+        //setEditImage(reader.result);
+      //};
+     // reader.readAsDataURL(file);
+    //}
+  //};
+
+
   const handleEdit = () => {
     setIsEditing(true);
   };
 
   const handleCancelEdit = () => {
     setEditTitle(project.title);
+    setEditImage(project.image)
     setIsEditing(false);
   };
 
   const handleSubmitEdit = async () => {
     const updatedProject = {
       title: editTitle,
+      image: editImage
     };
+
   // axios
     try {
       const response = await axios.patch(
@@ -63,12 +81,25 @@ const ProjectDetails = ({project}) => {
       {isEditing ? (
         // EDIT FORM
         <div className="edit-modal">
+
           <label>Edit Project Title:</label>
           <input
             type="text"
             value={editTitle}
             onChange={(event) => setEditTitle(event.target.value)}
           />
+
+          <label>Edit Project Image:</label>
+          <input
+            //type="text"
+            type="file"
+            //onChange={handleImageChange}
+            //value={editImage}
+            accept="image/*"
+            onChange={(event) => setEditImage(event.target.value)}
+            //onChange={(event) => setEditImage(event.target.files[0])}
+          /> 
+
           <button onClick={handleSubmitEdit} className="save">Save</button>
           <button onClick={handleCancelEdit} className="cancel">Cancel</button>
           
