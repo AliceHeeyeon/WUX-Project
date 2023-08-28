@@ -54,37 +54,47 @@ const Home = () => {
   return (
     <div className="home">
 
-        <Link to="/addproject">
-        <button>Add new</button>
-        </Link>
-      
-        <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search by username or project title"
-          value={searchTerm}
-          onChange={handleSearchTermChange}
-        />
-      </div>
-       <div className="user-usernames">
-         <div
-          className={`user-name ${selectedUser === null ? 'selected' : ''}`}
-          onClick={handleShowAllProjects}
-        >
-          All Projects
-        </div> 
-        
-        
+      <div className='settings-filters'>
 
-        {userUsernames.map(userUsername => (
-          <div
-            key={userUsername}
-            className={`user-name ${selectedUser === userUsername ? 'selected' : ''}`}
-            onClick={() => handleUserClick(userUsername)}
-          >
-            {userUsername}
-          </div>
-        ))}
+        <Link to="/addproject" className='add-new-btn'>
+          <button>
+            <i className="bi bi-pencil-fill"></i>
+            Add new
+          </button>
+        </Link>
+        
+        <form id="search-bar">
+          <input
+            type="text"
+            placeholder="Search by keyword"
+            value={searchTerm}
+            onChange={handleSearchTermChange}
+          />
+          <button id='search-bar-btn'>Search</button>
+        </form>
+        <div className="user-usernames">
+          <p className='filter-title'>Filter by Author:</p>
+
+          <ul>
+            <li
+              className={`user-name ${selectedUser === null ? 'selected' : ''}`}
+              onClick={handleShowAllProjects}
+            >
+              All Projects
+            </li> 
+          
+            {userUsernames.map(userUsername => (
+              <li
+                key={userUsername}
+                className={`user-name ${selectedUser === userUsername ? 'selected' : ''}`}
+                onClick={() => handleUserClick(userUsername)}
+              >
+                {userUsername}
+              </li>
+            ))}
+          </ul>
+        </div>
+      
       </div>
 
       <div className="projects">

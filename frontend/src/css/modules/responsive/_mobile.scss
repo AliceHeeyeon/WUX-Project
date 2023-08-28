@@ -3,8 +3,6 @@
 body {
   background: url('/app-bg.webp');
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
   // overflow: hidden;
 
   font-family: $body-font;
@@ -25,6 +23,9 @@ body {
   h1 {
     font-family: $head-font;
     // font-size: $head-size;
+
+    text-decoration: none;
+    color: $white;
   }
 
   nav div button, nav div a {
@@ -32,6 +33,7 @@ body {
     border: none;
     
     font-size: 16px;
+    font-family: $body-font;
     color: $white;
     text-decoration: none;
 
@@ -39,14 +41,10 @@ body {
   }
 }
 
-img {
-  width: 50%;
-}
-
-
 //   login modal 
 .login-modal {
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100vw;
@@ -62,9 +60,9 @@ img {
 
         padding: 20px;
 
-        background-color: $light-color;
+        background-color: $accent-color;
         border-radius: 15px;
-        border: 2px solid $white;
+        // border: 2px solid $white;
         box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
         
         color: $white;
@@ -76,12 +74,28 @@ img {
         input {
           width: 100%;
           margin: 0;
-          padding: 2px 5px;
+          padding: 5px 10px;
 
-          font-size: $body-size;
+          font-size: 16px;
 
           border: 1px solid black;
           border-radius: 10px;
+        }
+
+        .register-text, .register-text a {
+          color: $white;
+          text-decoration: underline;
+          font-size: 16px;
+        }
+
+        .login-confirm {
+          padding: 10px 15px;
+          border-radius: 15px;
+          background-color: $light-color;
+          border: none;
+
+          color: $white;
+          font-family: $body-font;
         }
 
         .cancel-login {
@@ -91,6 +105,157 @@ img {
           left: 5px;
         }
     }
+}
+
+.home {
+font-family: $body-font;
+color: $white;
+
+display: grid;
+grid-template-columns: 50% 50%;
+
+>div {
+  padding: 10px;
+  >* {margin: 10px 0;}
+}
+
+.add-new-btn {
+  button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+
+    color: $white;
+    font-family: $body-font;
+    text-decoration: underline;
+    i {
+      margin-right: 2px;
+    }
+  }
+}
+
+#search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: $main-color;
+  * {font-family: $body-font; color: $white;}
+  border-radius: 10px;
+
+  input {
+    padding: 3px 5px;
+    height: 100%;
+    width: 65%;
+    
+    background-color: $main-color;
+    border: none;
+  }
+  #search-bar-btn {
+    height: 100%;
+    width: 25%;
+
+    background-color: $accent-color;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+.user-usernames {
+  .filter-title {
+    font-size: 18px;
+  }
+  ul li {
+    margin: 5px 5px 0;
+    &.selected {
+      font-weight: bold;
+    }
+  }
+}
+
+.project-card {
+  position: relative;
+
+  .project-img {
+    width: 100%;
+  }
+  div {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0 0 5px 5px;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+}
+
+.add-form, .signup {
+  margin: 10vh auto;
+  width: 80%;
+
+  padding: 20px;
+
+  background-color: $accent-color;
+  border-radius: 15px;
+  // border: 2px solid $white;
+  box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
+  
+  color: $white;
+  font-size: $body-size;
+
+  h3, button {font-size: $sub-size;}
+  * {margin: 10px 0;}
+  div {margin: 0;}
+  input {
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+
+    font-size: 16px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .file-upload input {
+    border: none;
+    padding: 0;
+
+    font-family: $body-font;
+
+    border-radius: 0;
+  }
+
+  .add-btn, .signup-btn {
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: $light-color;
+    border: none;
+
+    color: $white;
+    font-family: $body-font;
+  }
+
+  .register-text, .register-text a {
+    color: $white;
+    text-decoration: underline;
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width:540px) {
