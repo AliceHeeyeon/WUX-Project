@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useProjectsContext } from '../hooks/useProjectsContext';
 import { Link } from 'react-router-dom';
 
-
 // Import components
 import ProjectDetails from "../components/ProjectDetails";
 
@@ -13,9 +12,9 @@ const Home = () => {
 
   const [selectedUser, setSelectedUser] = useState(null);
   const [userUsernames, setUserUsernames] = useState([]);
- 
 
-
+  // useState definitions for input:
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
        
@@ -44,10 +43,14 @@ const Home = () => {
     setSelectedUser(userUsername);
   }
 
-  //const handleShowAllProjects = () => {
-    //setSelectedUser(null);
- // };
+  const handleShowAllProjects = () => {
+    setSelectedUser(null);
+  };
   
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="home">
 
@@ -55,9 +58,15 @@ const Home = () => {
         <button>Add new</button>
         </Link>
       
+        <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by username or project title"
+          value={searchTerm}
+          onChange={handleSearchTermChange}
+        />
+      </div>
        <div className="user-usernames">
-
-         {/*
          <div
           className={`user-name ${selectedUser === null ? 'selected' : ''}`}
           onClick={handleShowAllProjects}
@@ -65,7 +74,7 @@ const Home = () => {
           All Projects
         </div> 
         
-        */}
+        
 
         {userUsernames.map(userUsername => (
           <div
@@ -81,7 +90,11 @@ const Home = () => {
       <div className="projects">
       
         {projects && projects.map((project) => {
-          if (!selectedUser || project.user_id === selectedUser) {
+          if (
+          (!selectedUser || project.user_id === selectedUser) &&
+          (project.user_id.includes(searchTerm) ||
+                project.title.includes(searchTerm))
+          ) {
               return <ProjectDetails key={project._id} project={project}/>
                 }
                 return null;

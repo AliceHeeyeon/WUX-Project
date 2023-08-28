@@ -11,6 +11,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Header from "./components/Header";
 import Login from "./components/Login";
 
+
 function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
 
