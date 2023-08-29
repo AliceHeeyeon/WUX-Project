@@ -1,16 +1,20 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { useProjectsContext } from '../hooks/useProjectsContext'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 // react-icons
 import {IoMdArrowRoundBack} from 'react-icons/io'
+
+// custom alert(sweetalert)
+import Swal from 'sweetalert2'
 
 const DetailPage = () => {
   const {dispatch} = useProjectsContext()
   const [project, setProject] = useState(null)
   const [loading, setLoading] = useState(true)
   const {id} = useParams()
+  const navigate = useNavigate()
 
    // Editing State
    const [isEditing, setIsEditing] = useState(false)
@@ -64,16 +68,39 @@ const DetailPage = () => {
         `http://localhost:4000/api/projects/${project._id}`,
         updateProject
       )
-      const updatedData = response.data
-
+      
       if (response.status === 200) {
-        console.log(updateProject);
-        dispatch({type: 'UPDATE_PROJECT', payload: updatedData})
+        const updatedData = response.data
+        setProject(updatedData)
         setIsEditing(false)
       }
     } catch (error) {
       console.error('Error updating project:',error);
     }
+  }
+
+  const deleteAlert = async () => {
+    
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: `You won't be able to revert this!`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#cf3c0d',
+      cancelButtonColor: '#aaa5a5',
+      confirmButtonText: 'Yes, Delete it!'
+    })
+    
+    if(result.isConfirmed) {
+        Swal.fire(
+        'Deleted!',
+        'Your workout has been deleted',
+        'success'
+        ) 
+        handleDelete()
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        console.log('Delete cancelled');
+      }
   }
 
   const handleDelete = async() => {
@@ -86,8 +113,12 @@ const DetailPage = () => {
     }
   }
 
+  const goBack = () => {
+    navigate('/')
+  }
+
   const user = JSON.parse(localStorage.getItem('user'))
-  const user_id = user.username
+  const user_id = user ? user.username : null
 
   if(loading) {
     return <>loading...</>
@@ -143,20 +174,20 @@ const DetailPage = () => {
         <p>{project.description}</p>
         <h5>Prototype</h5>
         <p>{project.prototype_url}</p>
-        {project.user_id === user_id &&
+        {user_id && project.user_id === user_id &&
         <>
           <p>
             <span className='edit' onClick={handleEdit} >
             Edit 
             </span>
             |
-            <span className='delete' onClick={handleDelete}> 
+            <span className='delete' onClick={deleteAlert}> 
               Delete
             </span>
-            </p>
+          </p>
         </>
         }
-        <div>
+        <div className='goback-detailpage' onClick={goBack}>
           <IoMdArrowRoundBack/>
           <span>Go Back</span>
         </div>
