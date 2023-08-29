@@ -24,7 +24,7 @@ function App() {
     setIsLoginVisible(false);
   };
 
-//   const handleLoginClick = LoginModalContextProvider;
+  // const handleLoginClick = LoginModalContextProvider;
 
   return (
     <div className="project-app">
@@ -36,7 +36,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/addproject" element={<AddProject />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/:id" element={<DetailPage/>}/>
+            <Route path="/:id" element={<DetailPage />} />
           </Routes>
         </div>
         {isLoginVisible && <Login onClose={handleLoginModalClose} />}

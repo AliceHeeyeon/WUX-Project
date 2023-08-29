@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
 
-const Signup = ({onLoginClick}) => {
+import useLoginModalContext from "../hooks/useLoginModalContext";
+
+const Signup = ({ onLoginClick }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // bring in signup function, loading state, error from our hook:
@@ -38,9 +40,13 @@ const Signup = ({onLoginClick}) => {
           />
         </div>
 
-        <p className="register-text">Already registered? <a onClick={onLoginClick}>Log In</a></p>
-        
-        <button className="signup-btn" disabled={isLoading}>Sign Up</button>
+        <p className="register-text">
+          Already registered? <a onClick={onLoginClick}>Log In</a>
+        </p>
+
+        <button className="signup-btn" disabled={isLoading}>
+          Sign Up
+        </button>
         {error && <div className="error">{error}</div>}
       </form>
     </div>
