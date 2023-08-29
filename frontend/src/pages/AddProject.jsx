@@ -1,11 +1,12 @@
 import axios from 'axios'
 import {useState} from 'react'
-import { useProjectsContext } from '../hooks/useProjectsContext'
-import { Link } from 'react-router-dom';
+// import { useProjectsContext } from '../hooks/useProjectsContext'
+import { useNavigate } from 'react-router-dom';
 
 const AddProject = () => {
   // Bring in dispatch
   // const {dispatch} = useProjectsContext()
+  const navigate = useNavigate()
 
   //form inputs state variables
   const [title, setTitle] = useState('')
@@ -40,8 +41,13 @@ const AddProject = () => {
       setDescription('')
       setImage(null)
       setError(null)
-      console.log('New Project added', response.data)
       // dispatch({type:'CREATE_PROJECTS', payload: response.data})
+
+      if(response.status === 200) {
+        console.log('New Project added', response.data)
+        navigate('/')
+      }
+
     } catch(error) {
       console.log(error.response);
       setError(error.message)
