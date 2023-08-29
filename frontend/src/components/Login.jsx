@@ -57,7 +57,7 @@ const Login = ({ onClose }) => {
         </div>
 
         <p className="register-text">
-          Not registered?{" "}
+          Not registered?
           <Link to="/signup">
             <span onClick={handleCancelClick}>Sign Up</span>
           </Link>
