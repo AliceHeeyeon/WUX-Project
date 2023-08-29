@@ -22,7 +22,6 @@ const Signup = ({onLoginClick}) => {
           <label className="username-label">Username</label>
           <input
             type="username"
-            placeholder="Username"
             className="username-input"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
@@ -33,7 +32,6 @@ const Signup = ({onLoginClick}) => {
           <label className="password-label">Password</label>
           <input
             type="password"
-            placeholder="Password"
             className="password-input"
             onChange={(e) => setPassword(e.target.value)}
             value={password}

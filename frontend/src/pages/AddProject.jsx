@@ -57,7 +57,6 @@ const AddProject = () => {
         <label>Project Title</label>
         <input
           type='text'
-          placeholder='Project Title'
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         />
@@ -67,7 +66,6 @@ const AddProject = () => {
         <label>Link to Prototype</label>
         <input
           type='text'
-          placeholder='Link to Prototype'
           onChange={(e) => setPrototype_url(e.target.value)}
           value={prototype_url}
         />
@@ -77,7 +75,6 @@ const AddProject = () => {
         <label>Project Description</label>
         <input
           type='text'
-          placeholder='Project Description'
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />

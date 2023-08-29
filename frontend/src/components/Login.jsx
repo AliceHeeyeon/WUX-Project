@@ -42,7 +42,6 @@ const Login = ({ onClose }) => {
         <label>Username</label>
         <input 
             type='text'
-            placeholder='Username'
             onChange={(e) => setUsername(e.target.value)}
             value={username}
         />
@@ -52,7 +51,6 @@ const Login = ({ onClose }) => {
         <label>Password</label>
         <input 
             type='password'
-            placeholder='Password'
             onChange={(e) => setPassword(e.target.value)}
             value={password}
         />

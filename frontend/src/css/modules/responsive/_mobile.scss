@@ -1,4 +1,4 @@
-@media screen and (min-width:360px) {.query-mobile{padding: 0;}}
+@media screen and (min-width:375px) {.query-mobile{padding: 0;}}
 
 body {
   background: url('/app-bg.webp');
@@ -32,10 +32,11 @@ body {
     background-color: $main-color;
     border: none;
     
-    font-size: 16px;
+    font-size: 18px;
     font-family: $body-font;
     color: $white;
     text-decoration: none;
+    cursor: pointer;
 
     margin-left: 10px;
   }
@@ -69,11 +70,10 @@ body {
         font-size: $body-size;
 
         h3, button {font-size: $sub-size;}
-        * {margin: 10px 0;}
-        div {margin: 0;}
+        * {margin: 20px 0;}
         input {
           width: 100%;
-          margin: 0;
+          margin-top: 5px;
           padding: 5px 10px;
 
           font-size: 16px;
@@ -96,13 +96,16 @@ body {
 
           color: $white;
           font-family: $body-font;
+          cursor: pointer;
         }
 
         .cancel-login {
           font-size: $sub-size;
           position: absolute;
           top: 10px;
-          left: 5px;
+          left: 15px;
+
+          cursor: pointer;
         }
     }
 }
@@ -112,7 +115,7 @@ font-family: $body-font;
 color: $white;
 
 display: grid;
-grid-template-columns: 50% 50%;
+grid-template-columns: 60% 40%;
 
 >div {
   padding: 10px;
@@ -126,6 +129,7 @@ grid-template-columns: 50% 50%;
 
     color: $white;
     font-family: $body-font;
+    font-size: 16px;
     text-decoration: underline;
     i {
       margin-right: 2px;
@@ -139,7 +143,7 @@ grid-template-columns: 50% 50%;
   justify-content: space-around;
 
   background-color: $main-color;
-  * {font-family: $body-font; color: $white;}
+  * {font-family: $body-font; color: $white; font-size: 16px;}
   border-radius: 10px;
 
   input {
@@ -174,6 +178,8 @@ grid-template-columns: 50% 50%;
 
 .project-card {
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 
   .project-img {
     width: 100%;
@@ -249,12 +255,17 @@ grid-template-columns: 50% 50%;
 
     color: $white;
     font-family: $body-font;
+    cursor: pointer;
   }
 
   .register-text, .register-text a {
     color: $white;
     text-decoration: underline;
     font-size: 16px;
+  }
+
+  .register-text a {
+    cursor: pointer;
   }
 }
 
@@ -268,5 +279,13 @@ grid-template-columns: 50% 50%;
   nav div button {
       font-size: $body-size;
   }
+}
+
+.home {
+grid-template-columns: 45% 55%;
+
+.project-card {
+  border-radius: 15px;
+}
 }
 }

@@ -19,7 +19,7 @@ body ::-webkit-scrollbar {
   display: none;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 375px) {
   .query-mobile {
     padding: 0;
   }
@@ -48,10 +48,11 @@ body {
 #header nav div button, #header nav div a {
   background-color: #251427;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Share Tech", sans-serif;
   color: #ffffff;
   text-decoration: none;
+  cursor: pointer;
   margin-left: 10px;
 }
 
@@ -80,14 +81,11 @@ body {
   font-size: 34px;
 }
 .login-modal .login * {
-  margin: 10px 0;
-}
-.login-modal .login div {
-  margin: 0;
+  margin: 20px 0;
 }
 .login-modal .login input {
   width: 100%;
-  margin: 0;
+  margin-top: 5px;
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid black;
@@ -105,19 +103,21 @@ body {
   border: none;
   color: #ffffff;
   font-family: "Share Tech", sans-serif;
+  cursor: pointer;
 }
 .login-modal .login .cancel-login {
   font-size: 34px;
   position: absolute;
   top: 10px;
-  left: 5px;
+  left: 15px;
+  cursor: pointer;
 }
 
 .home {
   font-family: "Share Tech", sans-serif;
   color: #ffffff;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 40%;
 }
 .home > div {
   padding: 10px;
@@ -130,6 +130,7 @@ body {
   border: none;
   color: #ffffff;
   font-family: "Share Tech", sans-serif;
+  font-size: 16px;
   text-decoration: underline;
 }
 .home .add-new-btn button i {
@@ -145,6 +146,7 @@ body {
 .home #search-bar * {
   font-family: "Share Tech", sans-serif;
   color: #ffffff;
+  font-size: 16px;
 }
 .home #search-bar input {
   padding: 3px 5px;
@@ -171,6 +173,8 @@ body {
 }
 .home .project-card {
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .home .project-card .project-img {
   width: 100%;
@@ -235,11 +239,15 @@ body {
   border: none;
   color: #ffffff;
   font-family: "Share Tech", sans-serif;
+  cursor: pointer;
 }
 .add-form .register-text, .add-form .register-text a, .signup .register-text, .signup .register-text a {
   color: #ffffff;
   text-decoration: underline;
   font-size: 16px;
+}
+.add-form .register-text a, .signup .register-text a {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 540px) {
@@ -248,5 +256,11 @@ body {
   }
   #header nav div button {
     font-size: 20px;
+  }
+  .home {
+    grid-template-columns: 45% 55%;
+  }
+  .home .project-card {
+    border-radius: 15px;
   }
 }
