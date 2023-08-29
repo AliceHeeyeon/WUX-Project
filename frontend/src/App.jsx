@@ -10,7 +10,7 @@ import DetailPage from "./pages/DetailPage";
 //import components
 import Header from "./components/Header";
 import Login from "./components/Login";
-
+// import { LoginModalContextProvider } from "./context/LoginModalContext";
 
 function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
@@ -23,6 +23,8 @@ function App() {
   const handleLoginModalClose = () => {
     setIsLoginVisible(false);
   };
+
+//   const handleLoginClick = LoginModalContextProvider;
 
   return (
     <div className="project-app">
