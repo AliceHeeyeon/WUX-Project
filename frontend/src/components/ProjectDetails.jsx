@@ -1,9 +1,19 @@
 import React from 'react';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useNavigate } from 'react-router-dom';
+
+
 
 const ProjectDetails = ({project}) => {
+  const navigate = useNavigate()
+
+  const routeChange = () => {
+    let path = `/${project._id}`
+    navigate(path)
+  }
+
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={routeChange}>
         <>
           {project.image && (
             <img className="project-img" 

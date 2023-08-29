@@ -6,11 +6,11 @@ import "./css/App.css";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import AddProject from "./pages/AddProject";
-import ProjectDetails from "./pages/DetailPage";
+import DetailPage from "./pages/DetailPage";
 //import components
 import Header from "./components/Header";
 import Login from "./components/Login";
-
+// import { LoginModalContextProvider } from "./context/LoginModalContext";
 
 function App() {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
@@ -24,6 +24,8 @@ function App() {
     setIsLoginVisible(false);
   };
 
+//   const handleLoginClick = LoginModalContextProvider;
+
   return (
     <div className="project-app">
       <BrowserRouter>
@@ -34,7 +36,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/addproject" element={<AddProject />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/:projectId" element={<ProjectDetails/>}/>
+            <Route path="/:id" element={<DetailPage/>}/>
           </Routes>
         </div>
         {isLoginVisible && <Login onClose={handleLoginModalClose} />}
