@@ -10,7 +10,7 @@ body {
 
 #header {
   margin: 5px;
-  padding: 15px 20px;
+  padding: 15px 10px;
 
   background-color: $main-color;
   color: $white;
@@ -26,6 +26,10 @@ body {
 
     text-decoration: none;
     color: $white;
+  }
+
+  nav {
+    margin-right: 0;
   }
 
   nav div button, nav div a {
@@ -114,15 +118,20 @@ body {
 font-family: $body-font;
 color: $white;
 
+position: relative;
 display: grid;
-grid-template-columns: 60% 40%;
+grid-template-columns: 40% 60%;
 
 >div {
-  padding: 10px;
-  >* {margin: 10px 0;}
+  padding: 50px 10px 10px;
+  .add-new-btn, #search-bar {margin: 10px 0;}
 }
 
 .add-new-btn {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+
   button {
     background-color: rgba(0, 0, 0, 0);
     border: none;
@@ -138,6 +147,10 @@ grid-template-columns: 60% 40%;
 }
 
 #search-bar {
+  position: absolute;
+  top: 0;
+  left: 10px;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -181,8 +194,19 @@ grid-template-columns: 60% 40%;
   border-radius: 5px;
   overflow: hidden;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100px;
+  max-height: 150px;
+
+  margin-bottom: 15px;
+
   .project-img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   div {
     position: absolute;
@@ -198,6 +222,8 @@ grid-template-columns: 60% 40%;
     flex-direction: column;
     justify-content: end;
     padding: 0 0 5px 5px;
+
+    color: $white;
 
     h4 {
       font-size: 20px;
@@ -269,6 +295,12 @@ grid-template-columns: 60% 40%;
   }
 }
 
+.project-page {
+  img {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width:540px) {
 // Media Query for large phones
 
@@ -276,6 +308,7 @@ grid-template-columns: 60% 40%;
   h1 {
       font-size: $head-size;
   }
+
   nav div button {
       font-size: $body-size;
   }
@@ -286,6 +319,19 @@ grid-template-columns: 45% 55%;
 
 .project-card {
   border-radius: 15px;
+
+  min-height: 150px;
+  max-height: 200px;
+
+  div {
+    img {
+      margin: auto 0;
+    }
+
+    h4 {
+      font-size: $sub-size;
+    }
+  }
 }
 }
 }

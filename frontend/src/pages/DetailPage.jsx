@@ -124,7 +124,7 @@ const DetailPage = () => {
     return <>loading...</>
   }
   return (
-    <div>
+    <div className='project-page'>
     {isEditing ? (
       <div className='edit-detail'>
 
