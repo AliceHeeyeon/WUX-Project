@@ -59,7 +59,7 @@ const Login = ({ onClose }) => {
         <p className="register-text">
           Not registered?{" "}
           <Link to="/signup">
-            <span>Sign Up</span>
+            <span onClick={handleCancelClick}>Sign Up</span>
           </Link>
         </p>
         <button className="login-confirm" disabled={isLoading}>
