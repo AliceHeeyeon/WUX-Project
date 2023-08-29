@@ -10,19 +10,21 @@ import ProjectDetails from "./pages/DetailPage";
 //import components
 import Header from "./components/Header";
 import Login from "./components/Login";
-
+import { LoginModalContextProvider } from "./context/LoginModalContext";
 
 function App() {
-  const [isLoginVisible, setIsLoginVisible] = useState(false);
+  // const [isLoginVisible, setIsLoginVisible] = useState(false);
 
-  const handleLoginClick = () => {
-    setIsLoginVisible(true);
-    console.log("login clicked");
-  };
+  // const handleLoginClick = () => {
+  //   setIsLoginVisible(true);
+  //   console.log("login clicked");
+  // };
 
-  const handleLoginModalClose = () => {
-    setIsLoginVisible(false);
-  };
+  // const handleLoginModalClose = () => {
+  //   setIsLoginVisible(false);
+  // };
+
+  const handleLoginClick = LoginModalContextProvider;
 
   return (
     <div className="project-app">
@@ -34,7 +36,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/addproject" element={<AddProject />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/:projectId" element={<ProjectDetails/>}/>
+            <Route path="/:projectId" element={<ProjectDetails />} />
           </Routes>
         </div>
         {isLoginVisible && <Login onClose={handleLoginModalClose} />}
