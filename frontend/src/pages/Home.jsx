@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 // Import components
 import ProjectDetails from "../components/ProjectDetails";
 
+// Import pages
+import DetailPage from './DetailPage'
+
 const Home = () => {
   //const [projects, setProjects] = useState(null)
   const {projects, dispatch} = useProjectsContext()
@@ -95,8 +98,12 @@ const Home = () => {
           (project.user_id.includes(searchTerm) ||
                 project.title.includes(searchTerm))
           ) {
-              return <ProjectDetails key={project._id} project={project}/>
-                }
+              return (
+                <Link to={`/${project._id}`} key={project._id}>
+                  <ProjectDetails project={project}/>
+                </Link>  
+              ) 
+              }
                 return null;
             })}
         </div>
