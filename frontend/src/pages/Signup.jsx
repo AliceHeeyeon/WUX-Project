@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
 
-const Signup = () => {
+const Signup = ({onLoginClick}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // bring in signup function, loading state, error from our hook:
@@ -17,27 +17,30 @@ const Signup = () => {
     <div className="signup">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h3>Sign Up</h3>
-        <label className="username-label">Username</label>
-        <input
-          type="username"
-          placeholder="Username"
-          className="username-input"
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-        />
-        <label className="password-label">Password</label>
-        <input
-          type="password"
-          placeholder="Password"
-          className="password-input"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
 
-        <p>
-          Already registered? <span>log In</span>
-        </p>
-        <button disabled={isLoading}>Sign Up</button>
+        <div>
+          <label className="username-label">Username</label>
+          <input
+            type="username"
+            className="username-input"
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
+        </div>
+
+        <div>
+          <label className="password-label">Password</label>
+          <input
+            type="password"
+            className="password-input"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </div>
+
+        <p className="register-text">Already registered? <a onClick={onLoginClick}>Log In</a></p>
+        
+        <button className="signup-btn" disabled={isLoading}>Sign Up</button>
         {error && <div className="error">{error}</div>}
       </form>
     </div>

@@ -50,45 +50,48 @@ const AddProject = () => {
   } 
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
+    <form className='add-form' onSubmit={handleSubmit}>
       <h3>Add a project</h3>
-      <label>Project Title</label>
-      <input
-        type='text'
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-      />
 
-      <label>Link to Prototype</label>
-      <input
-        type='text'
-        onChange={(e) => setPrototype_url(e.target.value)}
-        value={prototype_url}
-      />
+      <div>
+        <label>Project Title</label>
+        <input
+          type='text'
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
+        />
+      </div>
 
-      <label>Project Description</label>
-      <input
-        type='text'
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-      />
+      <div>
+        <label>Link to Prototype</label>
+        <input
+          type='text'
+          onChange={(e) => setPrototype_url(e.target.value)}
+          value={prototype_url}
+        />
+      </div>
 
-      <label>Project Mockup Image</label>
-      <input
-        type='file'
-        accept='image/*'
-        onChange={(e) => setImage(e.target.files[0])}
-      />
+      <div>
+        <label>Project Description</label>
+        <input
+          type='text'
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+        />
+      </div>
 
-      <button>Add Project</button>
+      <div className='file-upload'>
+        <label>Project Mockup Image</label>
+        <input
+          type='file'
+          accept='image/*'
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+      </div>
+
+      <button className='add-btn'>Add Project</button>
       {error && <div className='error'>{error}</div>}
-
-      <Link to="/">
-      <button>Close</button>
-    </Link>
-
     </form>
-    
   )
 }
 

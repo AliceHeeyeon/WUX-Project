@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
+import { Link } from "react-router-dom";
 //react-icons
 import { ImCancelCircle } from 'react-icons/im'
 
@@ -55,8 +56,8 @@ const Login = ({ onClose }) => {
         />
         </div>
 
-        <p>Not registered? <span>Sign Up</span></p>
-        <button disabled={isLoading}>Log In</button>
+        <p className='register-text'>Not registered? <Link to='/signup'><span>Sign Up</span></Link></p>
+        <button className='login-confirm' disabled={isLoading}>Log In</button>
         {error && <div className='login-error'>{error}</div>}
       </div>
     </form>
