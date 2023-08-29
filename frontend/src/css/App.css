@@ -32,7 +32,7 @@ body {
 
 #header {
   margin: 5px;
-  padding: 15px 20px;
+  padding: 15px 10px;
   background-color: #251427;
   color: #ffffff;
   border-radius: 10px;
@@ -44,6 +44,9 @@ body {
   font-family: "Koulen", sans-serif;
   text-decoration: none;
   color: #ffffff;
+}
+#header nav {
+  margin-right: 0;
 }
 #header nav div button, #header nav div a {
   background-color: #251427;
@@ -116,14 +119,20 @@ body {
 .home {
   font-family: "Share Tech", sans-serif;
   color: #ffffff;
+  position: relative;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 40% 60%;
 }
 .home > div {
-  padding: 10px;
+  padding: 50px 10px 10px;
 }
-.home > div > * {
+.home > div .add-new-btn, .home > div #search-bar {
   margin: 10px 0;
+}
+.home .add-new-btn {
+  position: absolute;
+  top: 4px;
+  right: 10px;
 }
 .home .add-new-btn button {
   background-color: rgba(0, 0, 0, 0);
@@ -137,6 +146,9 @@ body {
   margin-right: 2px;
 }
 .home #search-bar {
+  position: absolute;
+  top: 0;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -175,9 +187,18 @@ body {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  max-height: 150px;
+  margin-bottom: 15px;
 }
 .home .project-card .project-img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .home .project-card div {
   position: absolute;
@@ -191,6 +212,7 @@ body {
   flex-direction: column;
   justify-content: end;
   padding: 0 0 5px 5px;
+  color: #ffffff;
 }
 .home .project-card div h4 {
   font-size: 20px;
@@ -250,6 +272,10 @@ body {
   cursor: pointer;
 }
 
+.project-page img {
+  width: 100%;
+}
+
 @media screen and (min-width: 540px) {
   #header h1 {
     font-size: 40px;
@@ -262,5 +288,13 @@ body {
   }
   .home .project-card {
     border-radius: 15px;
+    min-height: 150px;
+    max-height: 200px;
+  }
+  .home .project-card div img {
+    margin: auto 0;
+  }
+  .home .project-card div h4 {
+    font-size: 34px;
   }
 }
