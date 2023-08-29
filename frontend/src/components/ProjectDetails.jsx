@@ -1,9 +1,19 @@
 import React from 'react';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useNavigate } from 'react-router-dom';
+
+
 
 const ProjectDetails = ({project}) => {
+  const navigate = useNavigate()
+
+  const routeChange = () => {
+    let path = `/${project._id}`
+    navigate(path)
+  }
+
   return (
-    <div className="project-details">
+    <div className="project-details" onClick={routeChange}>
         <>
          {project.image && (
                       <img className="project-image" 
@@ -15,6 +25,7 @@ const ProjectDetails = ({project}) => {
             <p><strong>Created by: </strong>{project.user_id}</p>
             <p>{formatDistanceToNow(new Date(project.createdAt), 
             {includeSeconds: true}, {addSuffix: true} )} ago</p>
+
         </>
     </div>
   )
