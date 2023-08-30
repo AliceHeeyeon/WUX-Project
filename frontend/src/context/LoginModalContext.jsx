@@ -13,4 +13,10 @@ export const useIsLoginVisible = () => {
   const handleLoginModalClose = () => {
     setIsLoginVisible(false);
   };
+
+  return (
+    <LoginModalContext.Provider value={{ ...state, dispatch }}>
+      {children}
+    </LoginModalContext.Provider>
+  );
 };

@@ -3,7 +3,7 @@ import { useLogout } from "../hooks/useLogout";
 import { Link } from "react-router-dom";
 
 //
-// import useLoginModalContext from "../hooks/useLoginModalContext";
+import useLoginModalContext from "../hooks/useLoginModalContext";
 
 const Header = ({ onLoginClick }) => {
   //Bring user through useAuthContext

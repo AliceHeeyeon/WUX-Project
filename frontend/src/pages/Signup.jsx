@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
 
-// import useLoginModalContext from "../hooks/useLoginModalContext";
+import useLoginModalContext from "../hooks/useLoginModalContext";
 
 const Signup = ({ onLoginClick }) => {
   const [username, setUsername] = useState("");
