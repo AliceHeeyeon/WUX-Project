@@ -10,27 +10,22 @@ import DetailPage from "./pages/DetailPage";
 //import components
 import Header from "./components/Header";
 import Login from "./components/Login";
-// import { LoginModalContextProvider } from "./context/LoginModalContext";
+// import context hook
+import { useLoginModalContext } from "./hooks/useLoginModalContext";
 
 function App() {
-  const [isLoginVisible, setIsLoginVisible] = useState(false);
-
-  const handleLoginClick = () => {
-    setIsLoginVisible(true);
-    console.log("login clicked");
-  };
+  const { isLoginVisible, dispatch } = useLoginModalContext();
 
   const handleLoginModalClose = () => {
-    setIsLoginVisible(false);
+    // Dispatch the action to close the modal
+    dispatch({ type: "LOGIN_CLOSE" });
   };
-
-  // const handleLoginClick = LoginModalContextProvider;
 
   return (
     <div className="project-app">
       <BrowserRouter>
         {/* custom event handler onLoginClick handle login modal */}
-        <Header onLoginClick={handleLoginClick} />
+        <Header />
         <div className="pages">
           <Routes>
             <Route path="/" element={<Home />} />

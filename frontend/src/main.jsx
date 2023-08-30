@@ -8,11 +8,11 @@ import { LoginModalContextProvider } from "./context/LoginModalContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
-      <ProjectsContextProvider>
-        <LoginModalContextProvider>
+      <LoginModalContextProvider>
+        <ProjectsContextProvider>
           <App />
-        </LoginModalContextProvider>
-      </ProjectsContextProvider>
+        </ProjectsContextProvider>
+      </LoginModalContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );
