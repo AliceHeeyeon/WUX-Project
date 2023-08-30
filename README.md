@@ -150,7 +150,7 @@ The dynamic API call fetches and updates project data, enabling the app to displ
 
 ### WUX PROJECT Mockups
 
-![project mockup](./public/readme/Desktop.png)
+![project mockup](./frontend/public/readme/Desktop.png)
 
 
 
