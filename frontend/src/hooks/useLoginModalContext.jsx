@@ -1,5 +1,5 @@
-import { LoginModalContext } from "../context/LoginModalContext";
 import { useContext } from "react";
+import { LoginModalContext } from "../context/LoginModalContext";
 
 // custom hook
 export const useLoginModalContext = () => {

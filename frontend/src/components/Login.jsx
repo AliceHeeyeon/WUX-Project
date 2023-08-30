@@ -1,16 +1,28 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 import { Link } from "react-router-dom";
-//react-icons
+// react-icons
 import { ImCancelCircle } from "react-icons/im";
 
+import { LoginModalContext } from "../context/LoginModalContext";
+import { useLoginModalContext } from "../hooks/useLoginModalContext";
+
 const Login = ({ onClose }) => {
-  // state for visiability
-  const [isVisible, setIsvisible] = useState(true);
+  // this is how the button works from the header without context
+  // // state for visiability
+  // const [isVisible, setIsvisible] = useState(true);
+
+  const { isLoginVisible } = useLoginModalContext();
+
+  // call in the context
+  // const isVisible = useLoginModalContext();
+
   // state for login
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { login, isLoading, error } = useLogin();
+
+  // ------------- Ciaran cut this and idk why, ask him
   // Bring userdata from localstorage
   const userData = localStorage.getItem("user");
 
@@ -23,14 +35,23 @@ const Login = ({ onClose }) => {
     e.preventDefault();
 
     await login(username, password);
+
+    // close the modal if user logs in
+    if (!error) {
+      // ------ what is onClose,
+      // it used to be handleLoginModalClose();
+
+      // use onClose
+      onClose();
+    }
   };
 
   const handleCancelClick = () => {
-    setIsvisible(false);
+    // use onClose prop
     onClose();
   };
 
-  return isVisible ? (
+  return isLoginVisible ? (
     <form className="login-modal" onSubmit={handleSubmit}>
       <div className="login">
         {/* cancel */}
@@ -59,6 +80,7 @@ const Login = ({ onClose }) => {
         <p className="register-text">
           Not registered?
           <Link to="/signup">
+            {/* closes the login modal when you move to signup */}
             <span onClick={handleCancelClick}>Sign Up</span>
           </Link>
         </p>
