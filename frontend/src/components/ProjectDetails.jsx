@@ -3,7 +3,6 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useNavigate } from 'react-router-dom';
 
 
-
 const ProjectDetails = ({project}) => {
   const navigate = useNavigate()
 
@@ -25,7 +24,7 @@ const ProjectDetails = ({project}) => {
           <div>
             <h4 className='project-title'>{project.title}</h4>
             <p className='project-author'>Created by: <span>{project.user_id}</span></p>
-            <p className='project-time'>{formatDistanceToNow(new Date(project.createdAt), 
+            <p className='project-time'>{formatDistanceToNow(new Date(project.createdAt),
             {includeSeconds: true}, {addSuffix: true} )} ago</p>
           </div>
         </>
