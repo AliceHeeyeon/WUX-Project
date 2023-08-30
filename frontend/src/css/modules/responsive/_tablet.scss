@@ -1,5 +1,62 @@
 @media screen and (min-width:768px) {
-.query-tablet {padding: 0;}
 
+#header {
+    padding: 15px 30px;
+}
+
+.home {
+
+>div {
+    padding: 60px 30px 30px;
+}
+
+.add-new-btn {
+    right: 30px;
+    button {
+        font-size: $body-size;
+    }
+}
+
+#search-bar {
+    * {font-family: $body-font; color: $white; font-size: $body-size;}
+
+    left: 30px;
+    
+    input {
+        padding: 5px 10px;
+        height: 100%;
+        width: 65%;
+    }
+}
+
+.user-usernames {
+    width: 50%;
+}
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card {
+    max-width: 400px;
+}
+}
+
+.project-page {
+
+padding: 50px 30px 30px;
+
+.detail-back-btn {left: 30px;}
+.edit-delete {right: 30px;}
+
+img {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+}
 
 }

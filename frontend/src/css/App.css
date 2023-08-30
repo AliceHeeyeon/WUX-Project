@@ -27,6 +27,9 @@ body ::-webkit-scrollbar {
 body {
   background: url("/app-bg.webp");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: scroll;
   font-family: "Share Tech", sans-serif;
 }
 
@@ -52,6 +55,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+#header nav span {
+  font-size: 20px;
 }
 #header nav div button, #header nav div a {
   background-color: #251427;
@@ -367,7 +373,74 @@ body {
   }
 }
 @media screen and (min-width: 768px) {
-  .query-tablet {
+  #header {
+    padding: 15px 30px;
+  }
+  .home > div {
+    padding: 60px 30px 30px;
+  }
+  .home .add-new-btn {
+    right: 30px;
+  }
+  .home .add-new-btn button {
+    font-size: 20px;
+  }
+  .home #search-bar {
+    left: 30px;
+  }
+  .home #search-bar * {
+    font-family: "Share Tech", sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .home #search-bar input {
+    padding: 5px 10px;
+    height: 100%;
+    width: 65%;
+  }
+  .home .user-usernames {
+    width: 50%;
+  }
+  .home .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home .project-card {
+    max-width: 400px;
+  }
+  .project-page {
+    padding: 50px 30px 30px;
+  }
+  .project-page .detail-back-btn {
+    left: 30px;
+  }
+  .project-page .edit-delete {
+    right: 30px;
+  }
+  .project-page img {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .query-desktop {
     padding: 0;
+  }
+  .project-page {
+    padding: 50px 50px 30px;
+  }
+  .project-page img {
+    width: 600px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .project-page {
+    padding: 50px 100px 30px;
+  }
+  .project-page img {
+    width: 700px;
   }
 }

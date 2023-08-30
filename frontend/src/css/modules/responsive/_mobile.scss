@@ -3,7 +3,9 @@
 body {
   background: url('/app-bg.webp');
   background-size: cover;
-  // overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: scroll;
 
   font-family: $body-font;
 }
@@ -35,6 +37,7 @@ body {
       flex-wrap: wrap;
       align-items: center;
     }
+    span {font-size: $body-size;}
   }
 
   nav div button, nav div a {
