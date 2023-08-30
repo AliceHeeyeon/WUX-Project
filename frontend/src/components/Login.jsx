@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // react-icons
 import { ImCancelCircle } from "react-icons/im";
 
@@ -8,6 +8,8 @@ import { LoginModalContext } from "../context/LoginModalContext";
 import { useLoginModalContext } from "../hooks/useLoginModalContext";
 
 const Login = ({ onClose }) => {
+  const navigate = useNavigate()
+
   // this is how the button works from the header without context
   // // state for visiability
   // const [isVisible, setIsvisible] = useState(true);
