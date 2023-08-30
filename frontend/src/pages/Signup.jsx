@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
+// import context hook
+import { useLoginModalContext } from "../hooks/useLoginModalContext";
 
 const Signup = ({ onLoginModalClick }) => {
   const [username, setUsername] = useState("");
@@ -11,6 +13,14 @@ const Signup = ({ onLoginModalClick }) => {
     e.preventDefault();
 
     await signup(username, password);
+  };
+
+  // take the dispatch function from context
+  const { dispatch } = useLoginModalContext();
+
+  // use the dispatch action to open login modal
+  const handleLoginModalClick = () => {
+    dispatch({ type: "LOGIN_OPEN" });
   };
 
   return (
@@ -39,7 +49,7 @@ const Signup = ({ onLoginModalClick }) => {
         </div>
 
         <p className="register-text">
-          Already registered? <a onClick={onLoginModalClick}>Log In</a>
+          Already registered? <a onClick={handleLoginModalClick}>Log In</a>
         </p>
 
         <button className="signup-btn" disabled={isLoading}>

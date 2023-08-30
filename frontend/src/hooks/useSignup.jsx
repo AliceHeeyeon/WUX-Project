@@ -9,8 +9,10 @@ export const useSignup = () => {
   const { dispatch } = useAuthContext();
 
   const signup = async (username, password) => {
-    setIsLoading(true); // disables button to stop requests
-    setError(null); // ensure there are no errors
+    // disables button to stop requests
+    setIsLoading(true);
+    // ensure there are no errors
+    setError(null);
 
     // API call
     try {
@@ -18,7 +20,8 @@ export const useSignup = () => {
         "http://localhost:4000/api/user/signup",
         { username, password },
         { headers: { "Content-Type": "application/json" } }
-      ); // end of URL
+      );
+      // end of URL
 
       if (response.status !== 200) {
         setIsLoading(false);
@@ -46,5 +49,6 @@ export const useSignup = () => {
     }
   };
 
-  return { signup, isLoading, error }; // signup function, isLoading state and error state
+  // signup function, isLoading state and error state
+  return { signup, isLoading, error };
 };
