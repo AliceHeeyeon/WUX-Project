@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
+import { useNavigate } from "react-router-dom";
 // import context hook
 import { useLoginModalContext } from "../hooks/useLoginModalContext";
 
-const Signup = ({ onLoginModalClick }) => {
+const Signup = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // bring in signup function, loading state, error from our hook:
@@ -13,6 +15,7 @@ const Signup = ({ onLoginModalClick }) => {
     e.preventDefault();
 
     await signup(username, password);
+    navigate('/')
   };
 
   // take the dispatch function from context
