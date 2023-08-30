@@ -48,6 +48,11 @@ body {
 #header nav {
   margin-right: 0;
 }
+#header nav div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 #header nav div button, #header nav div a {
   background-color: #251427;
   border: none;
@@ -66,6 +71,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  padding-top: 88px;
   background-color: rgba(37, 20, 39, 0.2);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -84,11 +90,14 @@ body {
   font-size: 34px;
 }
 .login-modal .login * {
-  margin: 20px 0;
+  margin: 10px 0;
+}
+.login-modal .login div {
+  margin: 0;
 }
 .login-modal .login input {
   width: 100%;
-  margin-top: 5px;
+  margin: 0;
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid black;
@@ -210,7 +219,7 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 0 0 5px 5px;
   color: #ffffff;
 }
@@ -221,7 +230,7 @@ body {
   text-decoration: underline;
 }
 
-.add-form, .signup {
+.add-form, .signup, .edit-form {
   margin: 10vh auto;
   width: 80%;
   padding: 20px;
@@ -231,16 +240,16 @@ body {
   color: #ffffff;
   font-size: 20px;
 }
-.add-form h3, .add-form button, .signup h3, .signup button {
+.add-form h3, .add-form button, .signup h3, .signup button, .edit-form h3, .edit-form button {
   font-size: 34px;
 }
-.add-form *, .signup * {
+.add-form *, .signup *, .edit-form * {
   margin: 10px 0;
 }
-.add-form div, .signup div {
+.add-form div, .signup div, .edit-form div {
   margin: 0;
 }
-.add-form input, .signup input {
+.add-form input, .signup input, .edit-form input {
   width: 100%;
   margin: 0;
   padding: 5px 10px;
@@ -248,13 +257,13 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
-.add-form .file-upload input, .signup .file-upload input {
+.add-form .file-upload input, .signup .file-upload input, .edit-form .file-upload input {
   border: none;
   padding: 0;
   font-family: "Share Tech", sans-serif;
   border-radius: 0;
 }
-.add-form .add-btn, .add-form .signup-btn, .signup .add-btn, .signup .signup-btn {
+.add-form .add-btn, .add-form .signup-btn, .add-form .edit-btn, .add-form .edit-cancel, .signup .add-btn, .signup .signup-btn, .signup .edit-btn, .signup .edit-cancel, .edit-form .add-btn, .edit-form .signup-btn, .edit-form .edit-btn, .edit-form .edit-cancel {
   padding: 10px 15px;
   border-radius: 15px;
   background-color: #723279;
@@ -263,17 +272,76 @@ body {
   font-family: "Share Tech", sans-serif;
   cursor: pointer;
 }
-.add-form .register-text, .add-form .register-text a, .signup .register-text, .signup .register-text a {
+.add-form .edit-cancel, .signup .edit-cancel, .edit-form .edit-cancel {
+  background-color: rgba(0, 0, 0, 0);
+}
+.add-form .register-text, .add-form .register-text a, .signup .register-text, .signup .register-text a, .edit-form .register-text, .edit-form .register-text a {
   color: #ffffff;
   text-decoration: underline;
   font-size: 16px;
 }
-.add-form .register-text a, .signup .register-text a {
+.add-form .register-text a, .signup .register-text a, .edit-form .register-text a {
   cursor: pointer;
 }
 
+.edit-form div {
+  margin: 10px 0;
+}
+
+.project-page {
+  color: #ffffff;
+  font-size: 16px;
+  position: relative;
+  padding: 50px 10px 10px;
+}
+.project-page h3 {
+  font-size: 34px;
+}
+.project-page .author-detail {
+  font-size: 18px;
+}
 .project-page img {
-  width: 100%;
+  margin: 30px 0;
+  max-width: 100%;
+  border-radius: 15px;
+}
+.project-page a {
+  color: #ffffff;
+}
+.project-page a > * {
+  margin: 10px 0;
+}
+.project-page a span {
+  text-decoration: underline;
+}
+.project-page .detail-back-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #47234b;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 5px 60px 3px 5px;
+}
+.project-page .detail-back-btn span {
+  position: absolute;
+  top: 5px;
+  left: 25px;
+}
+.project-page .edit-delete {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background-color: #47234b;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 5px 10px 3px;
+}
+.project-page .edit-delete .delete {
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 540px) {
@@ -296,5 +364,10 @@ body {
   }
   .home .project-card div h4 {
     font-size: 34px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .query-tablet {
+    padding: 0;
   }
 }

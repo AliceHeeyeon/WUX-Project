@@ -126,44 +126,53 @@ const DetailPage = () => {
   return (
     <div className='project-page'>
     {isEditing ? (
-      <div className='edit-detail'>
+      <div className='edit-form'>
 
-        <label>Edit Title</label>
-        <input
-          type='text'
-          value={editTitle}
-          onChange={(e) => setEditTitle(e.target.value)}
-        />
+        <div>
+          <h3>Edit "{project.title}" Project:</h3>
+          <label>Edit Title</label>
+          <input
+            type='text'
+            value={editTitle}
+            onChange={(e) => setEditTitle(e.target.value)}
+          />
+        </div>
 
-        <label>Edit Image</label>
-        <input
-          type='file'
-          accept='image/*'
-          onChange={(e) => setEditImage(e.target.files[0])}
-        />
+        <div>
+          <label>Edit Image</label>
+          <input
+            type='file'
+            accept='image/*'
+            onChange={(e) => setEditImage(e.target.files[0])}
+          />
+        </div>
 
-        <label>Link to Prototype</label>
-        <input
-          type='text'
-          value={editPrototype_url}
-          onChange={(e) => setEditPrototype_url(e.target.value)}
-        />
+        <div>
+          <label>Link to Prototype</label>
+          <input
+            type='text'
+            value={editPrototype_url}
+            onChange={(e) => setEditPrototype_url(e.target.value)}
+          />
+        </div>
 
-        <label>Project Description</label>
-        <input
-          type='text'
-          value={editDescription}
-          onChange={(e) => setEditDescription(e.target.value)}
-        />
+        <div>
+          <label>Project Description</label>
+          <input
+            type='text'
+            value={editDescription}
+            onChange={(e) => setEditDescription(e.target.value)}
+          />
+        </div>
 
-        <button className='save-edit' onClick={handleSubmitEdit}>Save</button>
-        <button className='cancel-edit' onClick={handleCancelEdit}>Cancel</button>
+        <button className='edit-btn' onClick={handleSubmitEdit}>Save</button>
+        <button className='edit-cancel' onClick={handleCancelEdit}>Cancel</button>
 
       </div>
       ) : (
       <div className='detail-page'>
         <h3>{project.title}</h3>
-        <p>Project Owner: {project.user_id}</p>
+        <p className='author-detail'>Project Owner:<strong> {project.user_id}</strong></p>
         {project.image && (
           <img
             src = {`http://localhost:4000/public/uploads/${project.image}`}
@@ -172,25 +181,23 @@ const DetailPage = () => {
         )}
 
         <p>{project.description}</p>
-        <h5>Prototype</h5>
         <a href={project.prototype_url} target='_blank' rel='noopener noreferrer'>
-          <p>{project.prototype_url}</p>
+          <p>View Prototype: <span>{project.prototype_url}</span></p>
         </a>
         
         {user_id && project.user_id === user_id &&
         <>
-          <p>
+          <p className='edit-delete'>
             <span className='edit' onClick={handleEdit} >
-            Edit 
+              <i class="bi bi-pencil-square"></i>
             </span>
-            |
             <span className='delete' onClick={deleteAlert}> 
-              Delete
+              <i class="bi bi-trash-fill"></i>
             </span>
           </p>
         </>
         }
-        <div className='goback-detailpage' onClick={goBack}>
+        <div className='detail-back-btn' onClick={goBack}>
           <IoMdArrowRoundBack/>
           <span>Go Back</span>
         </div>
