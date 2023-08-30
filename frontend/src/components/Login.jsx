@@ -22,7 +22,6 @@ const Login = ({ onClose }) => {
   const [password, setPassword] = useState("");
   const { login, isLoading, error } = useLogin();
 
-  // ------------- Ciaran cut this and idk why, ask him
   // Bring userdata from localstorage
   const userData = localStorage.getItem("user");
 
@@ -38,10 +37,7 @@ const Login = ({ onClose }) => {
 
     // close the modal if user logs in
     if (!error) {
-      // ------ what is onClose,
-      // it used to be handleLoginModalClose();
-
-      // use onClose
+      // use onClose prop
       onClose();
     }
   };

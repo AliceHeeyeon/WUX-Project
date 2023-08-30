@@ -7,24 +7,16 @@ import { useLogout } from "../hooks/useLogout";
 import { useLoginModalContext } from "../hooks/useLoginModalContext";
 
 const Header = ({ onLoginModalClick }) => {
-  //Bring user through useAuthContext
+  // bring user through useAuthContext
   const { user } = useAuthContext();
   const { logout } = useLogout();
   // take the dispatch function from context
   const { dispatch } = useLoginModalContext();
 
-  // ---------------- ! I don't quite understand the way this part works, ask Ciaran about it
-
   // use the dispatch action to open login modal
   const handleLoginModalClick = () => {
     dispatch({ type: "LOGIN_OPEN" });
   };
-
-  //  // this is how to do it with state
-  // const handleLoginModalClick = () => {
-  //   setIsLoginVisible(true);
-  //   console.log("login clicked");
-  // };
 
   const handleLogout = () => {
     logout();
