@@ -107,11 +107,13 @@ const Home = () => {
       <div className="projects">
       
         {projects && projects.map((project) => {
+          
+
           if (
           (!selectedUser || project.user_id === selectedUser) &&
-          (project.user_id.includes(searchTerm) ||
-                project.title.includes(searchTerm))
-          ) {
+          (project.user_id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          project.title.toLowerCase().includes(searchTerm.toLowerCase()))
+      ) {
               return (
                 <Link to={`/${project._id}`} key={project._id}>
                   <ProjectDetails project={project}/>
