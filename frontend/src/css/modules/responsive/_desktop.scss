@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @media screen and (min-width: 992px) {
   .home {
     grid-template-rows: 5% 95%;
@@ -20,3 +21,26 @@
     overflow-x: scroll;
   }
 }
+=======
+@media screen and (min-width: 1024px) {
+.query-desktop {padding:0}
+
+.project-page {
+padding: 50px 50px 30px;
+
+img {
+    width: 600px;
+}
+}
+}
+
+@media screen and (min-width: 1400px) {
+.project-page {
+padding: 50px 100px 30px;
+
+img {
+    width: 700px;
+}
+}
+}
+>>>>>>> 49d436bfef1c2cf065be5c5a5aacf2d50b6d8e3a
