@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 // import context hooks
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from "../hooks/useLogout";
 import { useLoginModalContext } from "../hooks/useLoginModalContext";
 
-const Header = ({ onLoginModalClick }) => {
+const Header = () => {
   // bring user through useAuthContext
   const { user } = useAuthContext();
   const { logout } = useLogout();
@@ -18,8 +19,18 @@ const Header = ({ onLoginModalClick }) => {
     dispatch({ type: "LOGIN_OPEN" });
   };
 
+  const logoutAlert = () => {
+    Swal.fire({
+        title: 'Logout',
+        text: `Logged out successfully`,
+        icon: 'success',
+        confirmButtonText: 'OK'
+    })
+  }
+
   const handleLogout = () => {
     logout();
+    logoutAlert()
   };
 
   return (

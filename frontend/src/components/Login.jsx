@@ -41,6 +41,7 @@ const Login = ({ onClose }) => {
     if (!error) {
       // use onClose prop
       onClose();
+      navigate('/')
     }
   };
 

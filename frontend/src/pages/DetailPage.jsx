@@ -110,6 +110,7 @@ const DetailPage = () => {
     if(response.status === 200) {
       console.log(json, 'is deleted');
       dispatch({type: 'DELETE_PROJECT', payload: json})
+      navigate('/')
     }
   }
 
