@@ -1,13 +1,12 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import { useProjectsContext } from '../hooks/useProjectsContext';
+import { useAuthContext } from '../hooks/useAuthContext';
 import { Link } from 'react-router-dom';
 
 // Import components
 import ProjectDetails from "../components/ProjectDetails";
 
-// Import pages
-import DetailPage from './DetailPage'
 
 const Home = () => {
   //const [projects, setProjects] = useState(null)
@@ -18,6 +17,9 @@ const Home = () => {
 
   // useState definitions for input:
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Bring user to check login
+  const {user} = useAuthContext()
 
   useEffect(() => {
        
@@ -59,12 +61,14 @@ const Home = () => {
 
       <div className='settings-filters'>
 
-        <Link to="/addproject" className='add-new-btn'>
+        {user && (
+          <Link to="/addproject" className='add-new-btn'>
           <button>
             <i className="bi bi-pencil-fill"></i>
             Add new
           </button>
         </Link>
+        )}
         
         <form id="search-bar">
           <input
