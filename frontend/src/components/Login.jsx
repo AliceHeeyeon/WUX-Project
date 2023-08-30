@@ -77,7 +77,7 @@ const Login = ({ onClose }) => {
         </div>
 
         <p className="register-text">
-          Not registered? 
+          Not registered?&nbsp;
           <Link to="/signup">
             {/* closes the login modal when you move to signup */}
             <span onClick={handleCancelClick}>Sign Up</span>

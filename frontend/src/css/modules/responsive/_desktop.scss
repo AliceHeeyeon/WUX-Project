@@ -1,0 +1,21 @@
+@media screen and (min-width: 1024px) {
+.query-desktop {padding:0}
+
+.project-page {
+padding: 50px 50px 30px;
+
+img {
+    width: 600px;
+}
+}
+}
+
+@media screen and (min-width: 1400px) {
+.project-page {
+padding: 50px 100px 30px;
+
+img {
+    width: 700px;
+}
+}
+}
