@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+@media screen and (min-width: 992px) {
+  .home {
+    grid-template-rows: 5% 95%;
+    grid-template-columns: none;
+  }
+
+  .user-usernames {
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      li {
+        margin: 5px 20px 0;
+      }
+    }
+  }
+  .projects {
+    overflow-x: scroll;
+  }
+}
+=======
 @media screen and (min-width: 1024px) {
 .query-desktop {padding:0}
 
@@ -19,3 +43,4 @@ img {
 }
 }
 }
+>>>>>>> 49d436bfef1c2cf065be5c5a5aacf2d50b6d8e3a
