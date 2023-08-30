@@ -152,6 +152,10 @@ The dynamic API call fetches and updates project data, enabling the app to displ
 
 ![project mockup](./frontend/public/readme/Desktop.png)
 
+![project mockup](./frontend/public/readme/Tablet.png)
+
+![project mockup](./frontend/public/readme/Mobile.png)
+
 
 
 
