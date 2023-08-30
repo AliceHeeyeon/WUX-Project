@@ -173,7 +173,10 @@ const DetailPage = () => {
 
         <p>{project.description}</p>
         <h5>Prototype</h5>
-        <p>{project.prototype_url}</p>
+        <a href={project.prototype_url} target='_blank' rel='noopener noreferrer'>
+          <p>{project.prototype_url}</p>
+        </a>
+        
         {user_id && project.user_id === user_id &&
         <>
           <p>
