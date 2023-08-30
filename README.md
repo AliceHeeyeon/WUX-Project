@@ -157,6 +157,21 @@ The dynamic API call fetches and updates project data, enabling the app to displ
 ![project mockup](./frontend/public/readme/Mobile.png)
 
 
+**For our project, we utilize various tools such as VS Code, Terminal, Figma, and Chrome Dev.**
+
+*VS Code (Visual Studio Code) provides extensible platform for writing and editing code.*
+
+*Terminal allows user to execute commands and navigate through the file system using text-based commands.*
+
+*Figma provides a wide range of design and prototyping features, enabling designers to create their designs seamlessly. Figma allowed us to create mockups for our project.*
+
+*Chrome DevTools allows us to inspect and debug web app, modify styles in real-time, and troubleshoot our web application.*
+
+
+### Developed by Yoobee College students Alice Kim, Maria Stromova, Ryan Gudsell, and Yasser Saeed.
+
+
+
 
 
 
