@@ -137,15 +137,6 @@ const DetailPage = () => {
           </div>
 
           <div>
-            <label>Edit Image</label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => setEditImage(e.target.files[0])}
-            />
-          </div>
-
-          <div>
             <label>Link to Prototype</label>
             <input
               type="text"
@@ -156,10 +147,19 @@ const DetailPage = () => {
 
           <div>
             <label>Project Description</label>
-            <input
-              type="text"
-              value={editDescription}
+            <textarea
+              rows="5"
               onChange={(e) => setEditDescription(e.target.value)}
+              value={editDescription}
+            />
+          </div>
+
+          <div className="file-upload">
+            <label className="file-upload-label">Edit Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setEditImage(e.target.files[0])}
             />
           </div>
 
