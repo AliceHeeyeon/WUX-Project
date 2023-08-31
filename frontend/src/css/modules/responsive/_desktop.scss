@@ -39,14 +39,16 @@
     max-height: 80vh;
     max-width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-x: auto;
     align-content: flex-start;
     margin: 0;
 
     a {
       width: 25%;
+      max-width: 500px;
       height: 50%;
       padding: 10px;
 
