@@ -59,7 +59,8 @@ body {
 #header nav span {
   font-size: 20px;
 }
-#header nav div button, #header nav div a {
+#header nav div button,
+#header nav div a {
   background-color: #251427;
   border: none;
   font-size: 18px;
@@ -77,58 +78,10 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding-top: 88px;
+  padding-top: 106px;
   background-color: rgba(37, 20, 39, 0.2);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-}
-.login-modal .login {
-  margin: 10vh auto;
-  width: 80%;
-  padding: 20px;
-  background-color: #47234b;
-  border-radius: 15px;
-  box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
-  color: #ffffff;
-  font-size: 20px;
-}
-.login-modal .login h3, .login-modal .login button {
-  font-size: 34px;
-}
-.login-modal .login * {
-  margin: 10px 0;
-}
-.login-modal .login div {
-  margin: 0;
-}
-.login-modal .login input {
-  width: 100%;
-  margin: 0;
-  padding: 5px 10px;
-  font-size: 16px;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-.login-modal .login .register-text, .login-modal .login .register-text a {
-  color: #ffffff;
-  text-decoration: underline;
-  font-size: 16px;
-}
-.login-modal .login .login-confirm {
-  padding: 10px 15px;
-  border-radius: 15px;
-  background-color: #723279;
-  border: none;
-  color: #ffffff;
-  font-family: "Share Tech", sans-serif;
-  cursor: pointer;
-}
-.login-modal .login .cancel-login {
-  font-size: 34px;
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  cursor: pointer;
 }
 
 .home {
@@ -141,7 +94,8 @@ body {
 .home > div {
   padding: 50px 10px 10px;
 }
-.home > div .add-new-btn, .home > div #search-bar {
+.home > div .add-new-btn,
+.home > div #search-bar {
   margin: 10px 0;
 }
 .home .add-new-btn {
@@ -214,6 +168,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
 }
 .home .project-card div {
   position: absolute;
@@ -222,7 +178,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -233,43 +189,111 @@ body {
   font-size: 20px;
 }
 .home .project-card div span {
-  text-decoration: underline;
+  margin-left: 0.5em;
 }
 
-.add-form, .signup, .edit-form {
+.add-form,
+.signup,
+.edit-form,
+.login {
   margin: 10vh auto;
   width: 80%;
-  padding: 20px;
+  max-width: 660px;
+  padding: 40px;
   background-color: #47234b;
   border-radius: 15px;
   box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
   color: #ffffff;
   font-size: 20px;
+  position: relative;
 }
-.add-form h3, .add-form button, .signup h3, .signup button, .edit-form h3, .edit-form button {
-  font-size: 34px;
+.add-form .cancel-login,
+.signup .cancel-login,
+.edit-form .cancel-login,
+.login .cancel-login {
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
 }
-.add-form *, .signup *, .edit-form * {
+.add-form h3,
+.add-form button,
+.signup h3,
+.signup button,
+.edit-form h3,
+.edit-form button,
+.login h3,
+.login button {
+  font-size: 30px;
+}
+.add-form *,
+.signup *,
+.edit-form *,
+.login * {
   margin: 10px 0;
 }
-.add-form div, .signup div, .edit-form div {
+.add-form div,
+.signup div,
+.edit-form div,
+.login div {
   margin: 0;
 }
-.add-form input, .signup input, .edit-form input {
+.add-form input,
+.signup input,
+.edit-form input,
+.login input {
   width: 100%;
   margin: 0;
+  margin: 0 0 16px 0;
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid black;
   border-radius: 10px;
 }
-.add-form .file-upload input, .signup .file-upload input, .edit-form .file-upload input {
-  border: none;
-  padding: 0;
-  font-family: "Share Tech", sans-serif;
-  border-radius: 0;
+.add-form .file-upload,
+.signup .file-upload,
+.edit-form .file-upload,
+.login .file-upload {
+  text-align: center;
 }
-.add-form .add-btn, .add-form .signup-btn, .add-form .edit-btn, .add-form .edit-cancel, .signup .add-btn, .signup .signup-btn, .signup .edit-btn, .signup .edit-cancel, .edit-form .add-btn, .edit-form .signup-btn, .edit-form .edit-btn, .edit-form .edit-cancel {
+.add-form .file-upload .file-upload-label,
+.signup .file-upload .file-upload-label,
+.edit-form .file-upload .file-upload-label,
+.login .file-upload .file-upload-label {
+  padding: 4px 10px;
+  border-radius: 15px;
+  border: #723279 4px solid;
+  color: #ffffff;
+  font-family: "Share Tech", sans-serif;
+  cursor: pointer;
+}
+.add-form .file-upload input,
+.signup .file-upload input,
+.edit-form .file-upload input,
+.login .file-upload input {
+  display: none;
+}
+.add-form .add-btn,
+.add-form .signup-btn,
+.add-form .edit-btn,
+.add-form .edit-cancel,
+.add-form .login-confirm,
+.signup .add-btn,
+.signup .signup-btn,
+.signup .edit-btn,
+.signup .edit-cancel,
+.signup .login-confirm,
+.edit-form .add-btn,
+.edit-form .signup-btn,
+.edit-form .edit-btn,
+.edit-form .edit-cancel,
+.edit-form .login-confirm,
+.login .add-btn,
+.login .signup-btn,
+.login .edit-btn,
+.login .edit-cancel,
+.login .login-confirm {
   padding: 10px 15px;
   border-radius: 15px;
   background-color: #723279;
@@ -278,15 +302,45 @@ body {
   font-family: "Share Tech", sans-serif;
   cursor: pointer;
 }
-.add-form .edit-cancel, .signup .edit-cancel, .edit-form .edit-cancel {
+.add-form .edit-cancel,
+.signup .edit-cancel,
+.edit-form .edit-cancel,
+.login .edit-cancel {
   background-color: rgba(0, 0, 0, 0);
 }
-.add-form .register-text, .add-form .register-text a, .signup .register-text, .signup .register-text a, .edit-form .register-text, .edit-form .register-text a {
-  color: #ffffff;
-  text-decoration: underline;
+.add-form .register-text,
+.add-form .register-text a,
+.signup .register-text,
+.signup .register-text a,
+.edit-form .register-text,
+.edit-form .register-text a,
+.login .register-text,
+.login .register-text a {
+  color: #d0b0d3;
   font-size: 16px;
 }
-.add-form .register-text a, .signup .register-text a, .edit-form .register-text a {
+.add-form .register-text a,
+.add-form .register-text span,
+.add-form .register-text a a,
+.add-form .register-text a span,
+.signup .register-text a,
+.signup .register-text span,
+.signup .register-text a a,
+.signup .register-text a span,
+.edit-form .register-text a,
+.edit-form .register-text span,
+.edit-form .register-text a a,
+.edit-form .register-text a span,
+.login .register-text a,
+.login .register-text span,
+.login .register-text a a,
+.login .register-text a span {
+  text-decoration: underline;
+}
+.add-form .register-text a,
+.signup .register-text a,
+.edit-form .register-text a,
+.login .register-text a {
   cursor: pointer;
 }
 
@@ -299,12 +353,25 @@ body {
   font-size: 16px;
   position: relative;
   padding: 50px 10px 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 .project-page h3 {
-  font-size: 34px;
+  font-size: 40px;
+  margin-bottom: 12px;
 }
 .project-page .author-detail {
-  font-size: 18px;
+  font-size: 30px;
+}
+.project-page .project-description,
+.project-page .prototype {
+  font-size: 20px;
+  max-width: 760px;
+}
+.project-page .prototype {
+  text-decoration: underline;
+  text-align: center;
 }
 .project-page img {
   margin: 30px 0;
@@ -317,10 +384,11 @@ body {
 .project-page a > * {
   margin: 10px 0;
 }
-.project-page a span {
-  text-decoration: underline;
+.project-page .detail-page {
+  position: relative;
 }
 .project-page .detail-back-btn {
+  height: 33px;
   cursor: pointer;
   position: absolute;
   top: 10px;
@@ -369,10 +437,10 @@ body {
     margin: auto 0;
   }
   .home .project-card div h4 {
-    font-size: 34px;
+    font-size: 30px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
   #header {
     padding: 15px 30px;
   }
@@ -425,6 +493,40 @@ body {
     margin-right: auto;
   }
 }
+@media screen and (min-width: 992px) {
+  .home {
+    grid-template-rows: 7% 93%;
+    grid-template-columns: none;
+  }
+  .home > div {
+    padding: 60px 20px 40px 40px;
+  }
+  .user-usernames ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .user-usernames ul li {
+    margin: 5px 20px 0;
+  }
+  .projects {
+    max-height: 80vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+  }
+  .projects a {
+    width: 25%;
+    height: 50%;
+    padding: 10px;
+  }
+  .projects a .project-card {
+    min-height: 250px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .query-desktop {
     padding: 0;
@@ -443,4 +545,4 @@ body {
   .project-page img {
     width: 700px;
   }
-}
+}/*# sourceMappingURL=App.css.map */

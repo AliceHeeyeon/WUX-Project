@@ -1,7 +1,11 @@
-@media screen and (min-width:375px) {.query-mobile{padding: 0;}}
+@media screen and (min-width: 375px) {
+  .query-mobile {
+    padding: 0;
+  }
+}
 
 body {
-  background: url('/app-bg.webp');
+  background: url("/app-bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -37,13 +41,16 @@ body {
       flex-wrap: wrap;
       align-items: center;
     }
-    span {font-size: $body-size;}
+    span {
+      font-size: $body-size;
+    }
   }
 
-  nav div button, nav div a {
+  nav div button,
+  nav div a {
     background-color: $main-color;
     border: none;
-    
+
     font-size: 18px;
     font-family: $body-font;
     color: $white;
@@ -54,219 +61,269 @@ body {
   }
 }
 
-//   login modal 
+//   login modal
 .login-modal {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 
-    padding-top: 88px;
-    
-    // change the background color as our desired style
-    background-color: rgba(37, 20, 39, 0.2);
-    backdrop-filter: blur(5px);
+  padding-top: 106px;
 
-    .login {
-        margin: 10vh auto;
-        width: 80%;
+  // change the background color as our desired style
+  background-color: rgba(37, 20, 39, 0.2);
+  backdrop-filter: blur(5px);
 
-        padding: 20px;
+  // .login {
+  //   margin: 10vh auto;
+  //   width: 80%;
+  //   max-width: 660px;
+  //   padding: 40px;
 
-        background-color: $accent-color;
-        border-radius: 15px;
-        // border: 2px solid $white;
-        box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
-        
-        color: $white;
-        font-size: $body-size;
+  //   background-color: $accent-color;
+  //   border-radius: 15px;
+  //   // border: 2px solid $white;
+  //   box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
 
-        h3, button {font-size: $sub-size;}
-        * {margin: 10px 0;}
-        div {margin: 0;}
-        input {
-          width: 100%;
-          margin: 0;
-          padding: 5px 10px;
+  //   color: $white;
+  //   font-size: $body-size;
 
-          font-size: 16px;
+  //   h3,
+  //   button {
+  //     font-size: $sub-size;
+  //   }
+  //   * {
+  //     margin: 10px 0;
+  //   }
+  //   div {
+  //     margin: 0;
+  //   }
 
-          border: 1px solid black;
-          border-radius: 10px;
-        }
+  //   input {
+  //     width: 100%;
+  //     margin: 0 0 16px 0;
+  //     padding: 5px 10px;
 
-        .register-text, .register-text a {
-          color: $white;
-          text-decoration: underline;
-          font-size: 16px;
-        }
+  //     font-size: 16px;
 
-        .login-confirm {
-          padding: 10px 15px;
-          border-radius: 15px;
-          background-color: $light-color;
-          border: none;
+  //     border: 1px solid black;
+  //     border-radius: 10px;
+  //   }
 
-          color: $white;
-          font-family: $body-font;
-          cursor: pointer;
-        }
+  //   .register-text,
+  //   .register-text a {
+  //     color: $fine-text-color;
+  //     font-size: 16px;
 
-        .cancel-login {
-          font-size: $sub-size;
-          position: absolute;
-          top: 10px;
-          left: 15px;
+  //     span {
+  //       text-decoration: underline;
+  //     }
+  //   }
 
-          cursor: pointer;
-        }
-    }
+  //   .login-confirm {
+  //     padding: 10px 15px;
+  //     border-radius: 15px;
+  //     background-color: $light-color;
+  //     border: none;
+
+  //     color: $white;
+  //     font-family: $body-font;
+  //     cursor: pointer;
+  //   }
+
+  //   .cancel-login {
+  //     font-size: $sub-size;
+  //     position: absolute;
+  //     top: 10px;
+  //     left: 15px;
+
+  //     cursor: pointer;
+  //   }
+  // }
 }
 
 .home {
-font-family: $body-font;
-color: $white;
+  font-family: $body-font;
+  color: $white;
 
-position: relative;
-display: grid;
-grid-template-columns: 40% 60%;
-
->div {
-  padding: 50px 10px 10px;
-  .add-new-btn, #search-bar {margin: 10px 0;}
-}
-
-.add-new-btn {
-  position: absolute;
-  top: 4px;
-  right: 10px;
-
-  button {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-
-    color: $white;
-    font-family: $body-font;
-    font-size: 16px;
-    text-decoration: underline;
-    i {
-      margin-right: 2px;
-    }
-  }
-}
-
-#search-bar {
-  position: absolute;
-  top: 0;
-  left: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  background-color: $main-color;
-  * {font-family: $body-font; color: $white; font-size: 16px;}
-  border-radius: 10px;
-
-  input {
-    padding: 3px 5px;
-    height: 100%;
-    width: 65%;
-    
-    background-color: $main-color;
-    border: none;
-  }
-  #search-bar-btn {
-    height: 100%;
-    width: 25%;
-
-    background-color: $accent-color;
-    border: none;
-    border-radius: 5px;
-  }
-}
-
-.user-usernames {
-  .filter-title {
-    font-size: 18px;
-  }
-  ul li {
-    margin: 5px 5px 0;
-    &.selected {
-      font-weight: bold;
-    }
-  }
-}
-
-.project-card {
   position: relative;
-  border-radius: 5px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40% 60%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 100px;
-  max-height: 150px;
-
-  margin-bottom: 15px;
-
-  .project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  > div {
+    padding: 50px 10px 10px;
+    .add-new-btn,
+    #search-bar {
+      margin: 10px 0;
+    }
   }
-  div {
+
+  .add-new-btn {
     position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
+    top: 4px;
+    right: 10px;
 
-    width: 100%;
-    height: 100%;
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
 
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 0 5px 5px;
-
-    color: $white;
-
-    h4 {
-      font-size: 20px;
-    }
-
-    span {
+      color: $white;
+      font-family: $body-font;
+      font-size: 16px;
       text-decoration: underline;
+      i {
+        margin-right: 2px;
+      }
+    }
+  }
+
+  #search-bar {
+    position: absolute;
+    top: 0;
+    left: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: $main-color;
+    * {
+      font-family: $body-font;
+      color: $white;
+      font-size: 16px;
+    }
+    border-radius: 10px;
+
+    input {
+      padding: 3px 5px;
+      height: 100%;
+      width: 65%;
+
+      background-color: $main-color;
+      border: none;
+    }
+    #search-bar-btn {
+      height: 100%;
+      width: 25%;
+
+      background-color: $accent-color;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  .user-usernames {
+    .filter-title {
+      font-size: 18px;
+    }
+    ul li {
+      margin: 5px 5px 0;
+      &.selected {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .project-card {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100px;
+    max-height: 150px;
+
+    margin-bottom: 15px;
+
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    div {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      // background-color: rgba(0, 0, 0, 0.3);
+
+      background-image: linear-gradient(rgba(0 0 0 /0), rgba(0 0 0 /7));
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 5px 5px;
+
+      color: $white;
+
+      h4 {
+        font-size: 20px;
+      }
+
+      span {
+        //   text-decoration: underline;
+        margin-left: 0.5em;
+      }
+
+      // .project-time {
+      //   margin-left: 1em;
+      // }
     }
   }
 }
-}
 
-.add-form, .signup, .edit-form {
+.add-form,
+.signup,
+.edit-form,
+.login {
   margin: 10vh auto;
   width: 80%;
-
-  padding: 20px;
+  max-width: 660px;
+  padding: 40px;
 
   background-color: $accent-color;
   border-radius: 15px;
   // border: 2px solid $white;
   box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
-  
+
   color: $white;
   font-size: $body-size;
 
-  h3, button {font-size: $sub-size;}
-  * {margin: 10px 0;}
-  div {margin: 0;}
+  position: relative;
+
+  .cancel-login {
+    font-size: $sub-size;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+
+    cursor: pointer;
+  }
+
+  h3,
+  button {
+    font-size: $sub-size;
+  }
+  * {
+    margin: 10px 0;
+  }
+  div {
+    margin: 0;
+  }
   input {
     width: 100%;
     margin: 0;
+    margin: 0 0 16px 0;
     padding: 5px 10px;
 
     font-size: 16px;
@@ -275,16 +332,28 @@ grid-template-columns: 40% 60%;
     border-radius: 10px;
   }
 
-  .file-upload input {
-    border: none;
-    padding: 0;
+  .file-upload {
+    text-align: center;
 
-    font-family: $body-font;
+    .file-upload-label {
+      padding: 4px 10px;
+      border-radius: 15px;
+      border: #723279 4px solid;
+      color: #ffffff;
+      font-family: "Share Tech", sans-serif;
+      cursor: pointer;
+    }
 
-    border-radius: 0;
+    input {
+      display: none;
+    }
   }
 
-  .add-btn, .signup-btn, .edit-btn, .edit-cancel {
+  .add-btn,
+  .signup-btn,
+  .edit-btn,
+  .edit-cancel,
+  .login-confirm {
     padding: 10px 15px;
     border-radius: 15px;
     background-color: $light-color;
@@ -299,10 +368,15 @@ grid-template-columns: 40% 60%;
     background-color: rgba(0, 0, 0, 0);
   }
 
-  .register-text, .register-text a {
-    color: $white;
-    text-decoration: underline;
+  .register-text,
+  .register-text a {
+    color: $fine-text-color;
     font-size: 16px;
+
+    a,
+    span {
+      text-decoration: underline;
+    }
   }
 
   .register-text a {
@@ -310,7 +384,9 @@ grid-template-columns: 40% 60%;
   }
 }
 
-.edit-form div {margin: 10px 0;}
+.edit-form div {
+  margin: 10px 0;
+}
 
 .project-page {
   color: $white;
@@ -320,8 +396,28 @@ grid-template-columns: 40% 60%;
 
   padding: 50px 10px 10px;
 
-  h3 {font-size: $sub-size;}
-  .author-detail {font-size: 18px;}
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  h3 {
+    font-size: $head-size;
+    margin-bottom: 12px;
+  }
+  .author-detail {
+    font-size: $sub-size;
+  }
+
+  .project-description,
+  .prototype {
+    font-size: $body-size;
+    max-width: 760px;
+  }
+
+  .prototype {
+    text-decoration: underline;
+    text-align: center;
+  }
 
   img {
     margin: 30px 0;
@@ -330,27 +426,33 @@ grid-template-columns: 40% 60%;
   }
 
   a {
-    color: $white; 
-    >* {margin: 10px 0;}
-
-    span {
-      text-decoration: underline;
+    color: $white;
+    > * {
+      margin: 10px 0;
     }
   }
 
+  .detail-page {
+    position: relative;
+  }
+
   .detail-back-btn {
+    height: 33px;
     cursor: pointer;
     position: absolute;
     top: 10px;
     left: 10px;
-
     background-color: $accent-color;
     border: 1px solid $white;
     border-radius: 10px;
     padding: 5px 60px 3px 5px;
-    span {position: absolute; top: 5px; left: 25px;}
+    span {
+      position: absolute;
+      top: 5px;
+      left: 25px;
+    }
   }
-  
+
   .edit-delete {
     cursor: pointer;
     position: absolute;
@@ -364,41 +466,43 @@ grid-template-columns: 40% 60%;
     border-radius: 10px;
     padding: 5px 10px 3px;
 
-    .delete {margin-left: 10px;}
+    .delete {
+      margin-left: 10px;
+    }
   }
 }
 
-@media screen and (min-width:540px) {
-// Media Query for large phones
+@media screen and (min-width: 540px) {
+  // Media Query for large phones
 
-#header {
-  h1 {
+  #header {
+    h1 {
       font-size: $head-size;
-  }
+    }
 
-  nav div button {
+    nav div button {
       font-size: $body-size;
-  }
-}
-
-.home {
-grid-template-columns: 45% 55%;
-
-.project-card {
-  border-radius: 15px;
-
-  min-height: 150px;
-  max-height: 200px;
-
-  div {
-    img {
-      margin: auto 0;
-    }
-
-    h4 {
-      font-size: $sub-size;
     }
   }
-}
-}
+
+  .home {
+    grid-template-columns: 45% 55%;
+
+    .project-card {
+      border-radius: 15px;
+
+      min-height: 150px;
+      max-height: 200px;
+
+      div {
+        img {
+          margin: auto 0;
+        }
+
+        h4 {
+          font-size: $sub-size;
+        }
+      }
+    }
+  }
 }

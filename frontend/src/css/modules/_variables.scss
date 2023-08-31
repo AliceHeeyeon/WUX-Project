@@ -16,8 +16,8 @@ body {
   ::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 // Colors
@@ -28,7 +28,7 @@ $accent-color: #47234b;
 $light-color: #723279;
 $hover-color: #8e66ad;
 $border-color: #f8e8ef;
-$fine-text-color: #ac71b2;
+$fine-text-color: #d0b0d3;
 
 // Typefaces
 
@@ -39,6 +39,6 @@ $body-font: "Share Tech", sans-serif;
 // Type sizes
 
 $head-size: 40px;
-$sub-size: 34px;
+$sub-size: 30px;
 $body-size: 20px;
 $button-size: 22px;
