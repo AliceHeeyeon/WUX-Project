@@ -92,7 +92,8 @@ body {
   grid-template-columns: 40% 60%;
 }
 .home > div {
-  padding: 50px 10px 10px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 .home > div .add-new-btn,
 .home > div #search-bar {
@@ -115,12 +116,10 @@ body {
   margin-right: 2px;
 }
 .home #search-bar {
-  position: absolute;
-  top: 0;
-  left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  max-width: 260px;
   background-color: #251427;
   border-radius: 10px;
 }
@@ -151,6 +150,9 @@ body {
 }
 .home .user-usernames ul li.selected {
   font-weight: bold;
+}
+.home .projects {
+  margin: 40px 0 0 0;
 }
 .home .project-card {
   position: relative;
@@ -240,9 +242,13 @@ body {
   margin: 0;
 }
 .add-form input,
+.add-form .description-input,
 .signup input,
+.signup .description-input,
 .edit-form input,
-.login input {
+.edit-form .description-input,
+.login input,
+.login .description-input {
   width: 100%;
   margin: 0;
   margin: 0 0 16px 0;
@@ -255,15 +261,21 @@ body {
 .signup .file-upload,
 .edit-form .file-upload,
 .login .file-upload {
-  text-align: center;
+  position: relative;
+  margin-bottom: 12px;
 }
 .add-form .file-upload .file-upload-label,
 .signup .file-upload .file-upload-label,
 .edit-form .file-upload .file-upload-label,
 .login .file-upload .file-upload-label {
+  position: absolute;
+  top: -0.6em;
+  left: -0.2em;
+  z-index: 4;
   padding: 4px 10px;
   border-radius: 15px;
   border: #723279 4px solid;
+  background-color: #47234b;
   color: #ffffff;
   font-family: "Share Tech", sans-serif;
   cursor: pointer;
@@ -272,7 +284,8 @@ body {
 .signup .file-upload input,
 .edit-form .file-upload input,
 .login .file-upload input {
-  display: none;
+  margin-left: 1.5em;
+  z-index: 3;
 }
 .add-form .add-btn,
 .add-form .signup-btn,
@@ -352,7 +365,7 @@ body {
   color: #ffffff;
   font-size: 16px;
   position: relative;
-  padding: 50px 10px 10px;
+  margin: 50px 10px 10px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -445,7 +458,8 @@ body {
     padding: 15px 30px;
   }
   .home > div {
-    padding: 60px 30px 30px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .home .add-new-btn {
     right: 30px;
@@ -478,7 +492,7 @@ body {
     max-width: 400px;
   }
   .project-page {
-    padding: 50px 30px 30px;
+    margin: 50px 30px 30px;
   }
   .project-page .detail-back-btn {
     left: 30px;
@@ -495,11 +509,14 @@ body {
 }
 @media screen and (min-width: 992px) {
   .home {
-    grid-template-rows: 7% 93%;
-    grid-template-columns: none;
+    display: block;
   }
   .home > div {
-    padding: 60px 20px 40px 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .pages {
+    padding: 0 20px 0 20px;
   }
   .user-usernames ul {
     display: flex;
@@ -517,6 +534,8 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     overflow-x: scroll;
+    align-content: flex-start;
+    margin: 0;
   }
   .projects a {
     width: 25%;
@@ -532,7 +551,7 @@ body {
     padding: 0;
   }
   .project-page {
-    padding: 50px 50px 30px;
+    margin: 50px 50px 30px;
   }
   .project-page img {
     width: 600px;
@@ -540,7 +559,7 @@ body {
 }
 @media screen and (min-width: 1400px) {
   .project-page {
-    padding: 50px 100px 30px;
+    margin: 50px 100px 30px;
   }
   .project-page img {
     width: 700px;

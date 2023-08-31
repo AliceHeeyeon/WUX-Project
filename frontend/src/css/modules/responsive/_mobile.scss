@@ -153,7 +153,9 @@ body {
   grid-template-columns: 40% 60%;
 
   > div {
-    padding: 50px 10px 10px;
+    // margin: 50px 10px 10px;
+    padding-right: 30px;
+    padding-left: 30px;
     .add-new-btn,
     #search-bar {
       margin: 10px 0;
@@ -180,13 +182,14 @@ body {
   }
 
   #search-bar {
-    position: absolute;
-    top: 0;
-    left: 10px;
+    // position: absolute;
+    // top: 0;
+    // left: 10px;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
+    max-width: 260px;
 
     background-color: $main-color;
     * {
@@ -224,6 +227,10 @@ body {
         font-weight: bold;
       }
     }
+  }
+
+  .projects {
+    margin: 40px 0 0 0;
   }
 
   .project-card {
@@ -320,7 +327,8 @@ body {
   div {
     margin: 0;
   }
-  input {
+  input,
+  .description-input {
     width: 100%;
     margin: 0;
     margin: 0 0 16px 0;
@@ -333,19 +341,31 @@ body {
   }
 
   .file-upload {
-    text-align: center;
+    // text-align: center;
+    position: relative;
+    margin-bottom: 12px;
 
     .file-upload-label {
+      position: absolute;
+      top: -0.6em;
+      left: -0.2em;
+      z-index: 4;
       padding: 4px 10px;
       border-radius: 15px;
-      border: #723279 4px solid;
+      border: $light-color 4px solid;
+      background-color: $accent-color;
       color: #ffffff;
       font-family: "Share Tech", sans-serif;
       cursor: pointer;
     }
 
     input {
-      display: none;
+      // position: relative;
+      // left: 1.5em;
+      margin-left: 1.5em;
+      z-index: 3;
+      // width: 50%;
+      // display: none;
     }
   }
 
@@ -394,7 +414,7 @@ body {
 
   position: relative;
 
-  padding: 50px 10px 10px;
+  margin: 50px 10px 10px;
 
   display: flex;
   justify-content: center;

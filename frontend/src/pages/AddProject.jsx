@@ -84,18 +84,17 @@ const AddProject = () => {
           type="text"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
+          className="description-input"
         />
       </div>
 
       <div className="file-upload">
-        <label className="file-upload-label">
-          Upload Image
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </label>
+        <label className="file-upload-label">Upload Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
       </div>
 
       <button className="add-btn">Add Project</button>

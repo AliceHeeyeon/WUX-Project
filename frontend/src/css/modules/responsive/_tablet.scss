@@ -5,7 +5,9 @@
 
   .home {
     > div {
-      padding: 60px 30px 30px;
+      // margin: 60px 30px 30px;
+      padding-right: 30px;
+      padding-left: 30px;
     }
 
     .add-new-btn {
@@ -46,7 +48,7 @@
   }
 
   .project-page {
-    padding: 50px 30px 30px;
+    margin: 50px 30px 30px;
 
     .detail-back-btn {
       left: 30px;
