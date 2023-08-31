@@ -92,7 +92,8 @@ body {
   grid-template-columns: 40% 60%;
 }
 .home > div {
-  padding: 50px 10px 10px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 .home > div .add-new-btn,
 .home > div #search-bar {
@@ -115,12 +116,10 @@ body {
   margin-right: 2px;
 }
 .home #search-bar {
-  position: absolute;
-  top: 0;
-  left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  max-width: 260px;
   background-color: #251427;
   border-radius: 10px;
 }
@@ -152,6 +151,9 @@ body {
 .home .user-usernames ul li.selected {
   font-weight: bold;
 }
+.home .projects {
+  margin: 40px 0 0 0;
+}
 .home .project-card {
   position: relative;
   border-radius: 5px;
@@ -159,8 +161,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100px;
-  max-height: 150px;
+  height: 120px;
   margin-bottom: 15px;
 }
 .home .project-card .project-img {
@@ -240,9 +241,13 @@ body {
   margin: 0;
 }
 .add-form input,
+.add-form textarea,
 .signup input,
+.signup textarea,
 .edit-form input,
-.login input {
+.edit-form textarea,
+.login input,
+.login textarea {
   width: 100%;
   margin: 0;
   margin: 0 0 16px 0;
@@ -251,28 +256,41 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
+.add-form textarea,
+.signup textarea,
+.edit-form textarea,
+.login textarea {
+  display: block;
+}
 .add-form .file-upload,
 .signup .file-upload,
 .edit-form .file-upload,
 .login .file-upload {
-  text-align: center;
+  margin-bottom: 12px;
 }
 .add-form .file-upload .file-upload-label,
 .signup .file-upload .file-upload-label,
 .edit-form .file-upload .file-upload-label,
 .login .file-upload .file-upload-label {
-  padding: 4px 10px;
-  border-radius: 15px;
-  border: #723279 4px solid;
-  color: #ffffff;
-  font-family: "Share Tech", sans-serif;
-  cursor: pointer;
+  display: none;
 }
 .add-form .file-upload input,
 .signup .file-upload input,
 .edit-form .file-upload input,
 .login .file-upload input {
-  display: none;
+  border: #723279 2px solid;
+}
+.add-form .file-upload input[type=file]::file-selector-button,
+.signup .file-upload input[type=file]::file-selector-button,
+.edit-form .file-upload input[type=file]::file-selector-button,
+.login .file-upload input[type=file]::file-selector-button {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #723279;
+  color: #ffffff;
+  font-family: "Share Tech", sans-serif;
+  cursor: pointer;
 }
 .add-form .add-btn,
 .add-form .signup-btn,
@@ -352,7 +370,7 @@ body {
   color: #ffffff;
   font-size: 16px;
   position: relative;
-  padding: 50px 10px 10px;
+  margin: 50px 10px 10px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -445,7 +463,8 @@ body {
     padding: 15px 30px;
   }
   .home > div {
-    padding: 60px 30px 30px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .home .add-new-btn {
     right: 30px;
@@ -478,7 +497,7 @@ body {
     max-width: 400px;
   }
   .project-page {
-    padding: 50px 30px 30px;
+    margin: 50px 30px 30px;
   }
   .project-page .detail-back-btn {
     left: 30px;
@@ -495,11 +514,14 @@ body {
 }
 @media screen and (min-width: 992px) {
   .home {
-    grid-template-rows: 7% 93%;
-    grid-template-columns: none;
+    display: block;
   }
   .home > div {
-    padding: 60px 20px 40px 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .pages {
+    padding: 0 20px 0 20px;
   }
   .user-usernames ul {
     display: flex;
@@ -514,12 +536,16 @@ body {
     max-height: 80vh;
     max-width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-x: auto;
+    align-content: flex-start;
+    margin: 0;
   }
   .projects a {
     width: 25%;
+    max-width: 500px;
     height: 50%;
     padding: 10px;
   }
@@ -532,7 +558,7 @@ body {
     padding: 0;
   }
   .project-page {
-    padding: 50px 50px 30px;
+    margin: 50px 50px 30px;
   }
   .project-page img {
     width: 600px;
@@ -540,7 +566,7 @@ body {
 }
 @media screen and (min-width: 1400px) {
   .project-page {
-    padding: 50px 100px 30px;
+    margin: 50px 100px 30px;
   }
   .project-page img {
     width: 700px;

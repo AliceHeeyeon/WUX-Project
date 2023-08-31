@@ -80,22 +80,20 @@ const AddProject = () => {
 
       <div>
         <label>Description</label>
-        <input
-          type="text"
+        <textarea
+          rows="5"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
       </div>
 
       <div className="file-upload">
-        <label className="file-upload-label">
-          Upload Image
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </label>
+        <label className="file-upload-label">Upload Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
       </div>
 
       <button className="add-btn">Add Project</button>

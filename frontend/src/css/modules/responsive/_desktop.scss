@@ -1,11 +1,27 @@
 @media screen and (min-width: 992px) {
   .home {
-    grid-template-rows: 7% 93%;
-    grid-template-columns: none;
+    display: block;
+    // grid-template-rows: 7% 93%;
+    // grid-template-columns: none;
     > div {
-      padding: 60px 20px 40px 40px;
+      // margin: 60px 20px 40px 40px;
+      padding-right: 30px;
+      padding-left: 30px;
     }
   }
+
+  .pages {
+    padding: 0 20px 0 20px;
+  }
+
+  // // .settings-filter {
+  // #search-bar {
+  //   position: initial;
+  //   top: 0;
+  //   left: 0;
+  //   display: block;
+  // }
+  // // }
 
   .user-usernames {
     ul {
@@ -23,11 +39,16 @@
     max-height: 80vh;
     max-width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-x: auto;
+    align-content: flex-start;
+    margin: 0;
+
     a {
       width: 25%;
+      max-width: 500px;
       height: 50%;
       padding: 10px;
 
@@ -37,13 +58,14 @@
     }
   }
 }
+
 @media screen and (min-width: 1024px) {
   .query-desktop {
     padding: 0;
   }
 
   .project-page {
-    padding: 50px 50px 30px;
+    margin: 50px 50px 30px;
 
     img {
       width: 600px;
@@ -53,7 +75,7 @@
 
 @media screen and (min-width: 1400px) {
   .project-page {
-    padding: 50px 100px 30px;
+    margin: 50px 100px 30px;
 
     img {
       width: 700px;
