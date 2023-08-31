@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // react-icons
 import { ImCancelCircle } from "react-icons/im";
 
@@ -8,7 +8,6 @@ import { LoginModalContext } from "../context/LoginModalContext";
 import { useLoginModalContext } from "../hooks/useLoginModalContext";
 
 const Login = ({ onClose }) => {
-  const navigate = useNavigate()
 
   // this is how the button works from the header without context
   // // state for visiability
@@ -36,13 +35,6 @@ const Login = ({ onClose }) => {
     e.preventDefault();
 
     await login(username, password);
-
-    // close the modal if user logs in
-    if (!error) {
-      // use onClose prop
-      onClose();
-      navigate('/')
-    }
   };
 
   const handleCancelClick = () => {
