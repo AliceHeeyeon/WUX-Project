@@ -80,11 +80,10 @@ const AddProject = () => {
 
       <div>
         <label>Description</label>
-        <input
-          type="text"
+        <textarea
+          rows="5"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
-          className="description-input"
         />
       </div>
 

@@ -328,7 +328,7 @@ body {
     margin: 0;
   }
   input,
-  .description-input {
+  textarea {
     width: 100%;
     margin: 0;
     margin: 0 0 16px 0;
@@ -340,32 +340,29 @@ body {
     border-radius: 10px;
   }
 
+  textarea {
+    display: block;
+  }
+
   .file-upload {
-    // text-align: center;
-    position: relative;
     margin-bottom: 12px;
 
     .file-upload-label {
-      position: absolute;
-      top: -0.6em;
-      left: -0.2em;
-      z-index: 4;
-      padding: 4px 10px;
-      border-radius: 15px;
-      border: $light-color 4px solid;
-      background-color: $accent-color;
-      color: #ffffff;
-      font-family: "Share Tech", sans-serif;
-      cursor: pointer;
+      display: none;
     }
 
     input {
-      // position: relative;
-      // left: 1.5em;
-      margin-left: 1.5em;
-      z-index: 3;
-      // width: 50%;
-      // display: none;
+      border: $light-color 2px solid;
+    }
+
+    input[type="file"]::file-selector-button {
+      padding: 4px 10px;
+      border: 0;
+      border-radius: 6px;
+      background-color: $light-color;
+      color: #ffffff;
+      font-family: "Share Tech", sans-serif;
+      cursor: pointer;
     }
   }
 

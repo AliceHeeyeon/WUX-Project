@@ -242,13 +242,13 @@ body {
   margin: 0;
 }
 .add-form input,
-.add-form .description-input,
+.add-form textarea,
 .signup input,
-.signup .description-input,
+.signup textarea,
 .edit-form input,
-.edit-form .description-input,
+.edit-form textarea,
 .login input,
-.login .description-input {
+.login textarea {
   width: 100%;
   margin: 0;
   margin: 0 0 16px 0;
@@ -257,35 +257,41 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
+.add-form textarea,
+.signup textarea,
+.edit-form textarea,
+.login textarea {
+  display: block;
+}
 .add-form .file-upload,
 .signup .file-upload,
 .edit-form .file-upload,
 .login .file-upload {
-  position: relative;
   margin-bottom: 12px;
 }
 .add-form .file-upload .file-upload-label,
 .signup .file-upload .file-upload-label,
 .edit-form .file-upload .file-upload-label,
 .login .file-upload .file-upload-label {
-  position: absolute;
-  top: -0.6em;
-  left: -0.2em;
-  z-index: 4;
-  padding: 4px 10px;
-  border-radius: 15px;
-  border: #723279 4px solid;
-  background-color: #47234b;
-  color: #ffffff;
-  font-family: "Share Tech", sans-serif;
-  cursor: pointer;
+  display: none;
 }
 .add-form .file-upload input,
 .signup .file-upload input,
 .edit-form .file-upload input,
 .login .file-upload input {
-  margin-left: 1.5em;
-  z-index: 3;
+  border: #723279 2px solid;
+}
+.add-form .file-upload input[type=file]::file-selector-button,
+.signup .file-upload input[type=file]::file-selector-button,
+.edit-form .file-upload input[type=file]::file-selector-button,
+.login .file-upload input[type=file]::file-selector-button {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #723279;
+  color: #ffffff;
+  font-family: "Share Tech", sans-serif;
+  cursor: pointer;
 }
 .add-form .add-btn,
 .add-form .signup-btn,
