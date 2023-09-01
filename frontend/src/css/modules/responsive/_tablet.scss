@@ -3,9 +3,9 @@
     padding: 15px 30px;
   }
 
+  // ----- Home
   .home {
     > div {
-      // margin: 60px 30px 30px;
       padding-right: 30px;
       padding-left: 30px;
     }
@@ -16,6 +16,8 @@
         font-size: $body-size;
       }
     }
+
+    // ----- Home - Search Bar
 
     #search-bar {
       * {
@@ -36,6 +38,8 @@
     .user-usernames {
       width: 50%;
     }
+
+    // ----- Home - Projects
     .projects {
       display: flex;
       flex-direction: column;

@@ -4,6 +4,8 @@
   }
 }
 
+// ----- Body
+
 body {
   background: url("/app-bg.webp");
   background-size: cover;
@@ -13,6 +15,8 @@ body {
 
   font-family: $body-font;
 }
+
+// ----- Nav
 
 #header {
   margin: 5px;
@@ -61,7 +65,7 @@ body {
   }
 }
 
-//   login modal
+// ----- Login Modal
 .login-modal {
   position: fixed;
   z-index: 10;
@@ -69,80 +73,12 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-
   padding-top: 106px;
-
-  // change the background color as our desired style
   background-color: rgba(37, 20, 39, 0.2);
   backdrop-filter: blur(5px);
-
-  // .login {
-  //   margin: 10vh auto;
-  //   width: 80%;
-  //   max-width: 660px;
-  //   padding: 40px;
-
-  //   background-color: $accent-color;
-  //   border-radius: 15px;
-  //   // border: 2px solid $white;
-  //   box-shadow: 4px 7px 8px 5px rgba(0, 0, 0, 0.25);
-
-  //   color: $white;
-  //   font-size: $body-size;
-
-  //   h3,
-  //   button {
-  //     font-size: $sub-size;
-  //   }
-  //   * {
-  //     margin: 10px 0;
-  //   }
-  //   div {
-  //     margin: 0;
-  //   }
-
-  //   input {
-  //     width: 100%;
-  //     margin: 0 0 16px 0;
-  //     padding: 5px 10px;
-
-  //     font-size: 16px;
-
-  //     border: 1px solid black;
-  //     border-radius: 10px;
-  //   }
-
-  //   .register-text,
-  //   .register-text a {
-  //     color: $fine-text-color;
-  //     font-size: 16px;
-
-  //     span {
-  //       text-decoration: underline;
-  //     }
-  //   }
-
-  //   .login-confirm {
-  //     padding: 10px 15px;
-  //     border-radius: 15px;
-  //     background-color: $light-color;
-  //     border: none;
-
-  //     color: $white;
-  //     font-family: $body-font;
-  //     cursor: pointer;
-  //   }
-
-  //   .cancel-login {
-  //     font-size: $sub-size;
-  //     position: absolute;
-  //     top: 10px;
-  //     left: 15px;
-
-  //     cursor: pointer;
-  //   }
-  // }
 }
+
+// ----- Home - Projects
 
 .home {
   font-family: $body-font;
@@ -181,16 +117,12 @@ body {
     }
   }
 
+  // ----- Home - Search Bar
   #search-bar {
-    // position: absolute;
-    // top: 0;
-    // left: 10px;
-
     display: flex;
     align-items: center;
     justify-content: space-around;
     max-width: 260px;
-
     background-color: $main-color;
     * {
       font-family: $body-font;
@@ -207,6 +139,7 @@ body {
       background-color: $main-color;
       border: none;
     }
+
     #search-bar-btn {
       height: 100%;
       width: 25%;
@@ -221,6 +154,7 @@ body {
     .filter-title {
       font-size: 18px;
     }
+
     ul li {
       margin: 5px 5px 0;
       &.selected {
@@ -229,6 +163,7 @@ body {
     }
   }
 
+  // ----- Home - Projects
   .projects {
     margin: 40px 0 0 0;
   }
@@ -237,13 +172,9 @@ body {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // min-height: 100px;
-    // max-height: 150px;
     height: 120px;
 
     margin-bottom: 15px;
@@ -259,14 +190,9 @@ body {
       z-index: 1;
       bottom: 0;
       left: 0;
-
       width: 100%;
       height: 100%;
-
-      // background-color: rgba(0, 0, 0, 0.3);
-
       background-image: linear-gradient(rgba(0 0 0 /0), rgba(0 0 0 /7));
-
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
