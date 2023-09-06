@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-// import { useProjectsContext } from '../hooks/useProjectsContext'
 import { useNavigate } from "react-router-dom";
 
 const AddProject = () => {
@@ -44,7 +43,6 @@ const AddProject = () => {
       setDescription("");
       setImage(null);
       setError(null);
-      // dispatch({type:'CREATE_PROJECTS', payload: response.data})
 
       if (response.status === 200) {
         console.log("New Project added", response.data);
