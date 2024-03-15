@@ -24,7 +24,7 @@ const Home = () => {
     const fetchProjects = async () => {
       try {
         // axios call
-        const response = await axios.get("http://localhost:4000/api/projects");
+        const response = await axios.get("https://wux-server.vercel.app/api/projects");
 
         if (response.status === 200) {
           //setProjects(response.data)

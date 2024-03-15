@@ -16,7 +16,7 @@ export const useLogin = () => {
     //API call
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/user/login",
+        "https://wux-server.vercel.app/api/user/login",
         { username, password },
         {
           headers: {

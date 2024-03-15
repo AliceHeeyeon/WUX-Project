@@ -26,7 +26,7 @@ const DetailPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/projects/${id}`)
+      .get(`https://wux-server.vercel.app/api/projects/${id}`)
       .then((res) => {
         console.log(res.data);
         setProject(res.data[0]);
