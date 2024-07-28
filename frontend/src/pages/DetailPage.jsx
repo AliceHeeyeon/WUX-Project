@@ -26,7 +26,7 @@ const DetailPage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://wux-server.vercel.app/api/projects/${id}`)
+      .get(`http://localhost:4000/api/projects/${id}`)
       .then((res) => {
         console.log(res.data);
         setProject(res.data[0]);
@@ -124,6 +124,7 @@ const DetailPage = () => {
   }
   return (
     <div className="project-page">
+      {/* If IsEditing is true, display this form */}
       {isEditing ? (
         <div className="edit-form">
           <div>
@@ -171,6 +172,7 @@ const DetailPage = () => {
           </button>
         </div>
       ) : (
+        // otherwise display detail page
         <div className="detail-page">
           <h3>{project.title}</h3>
           <p className="author-detail">
@@ -194,6 +196,7 @@ const DetailPage = () => {
             </p>
           </a>
 
+          {/* Edit and Delete button only show if user id match with project user id */}
           {user_id && project.user_id === user_id && (
             <>
               <p className="edit-delete">

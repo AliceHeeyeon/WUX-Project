@@ -30,7 +30,7 @@ const AddProject = () => {
 
     try {
       const response = await axios.post(
-        "https://wux-server.vercel.app/api/projects",
+        "http://localhost:4000/api/projects/",
         formData,
         {
           headers: {
